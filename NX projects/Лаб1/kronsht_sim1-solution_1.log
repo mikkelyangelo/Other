@@ -1,0 +1,110 @@
+NX Nastran V10.0 (Intel64 Family 6 Model 158 Stepping 10 Windows 8  ) Control File:
+-------------------------------------------------------------------
+Nastran BUFFSIZE=32769 $(c:/program files/siemens/nx 10.0/nxnastran/conf/nast10.rcf[1])
+Nastran BUFFPOOL=20.0X $(c:/program files/siemens/nx 10.0/nxnastran/conf/nast10.rcf[4])
+Nastran DIAGA=128 DIAGB=0 $(c:/program files/siemens/nx 10.0/nxnastran/conf/nast10.rcf[8])
+Nastran SYSTEM(442)=2 $(command line[5])
+Nastran REAL=2125201408 $(program default)
+JID='C:\Users\Admin\Desktop\Ã√“”\7 —≈Ã≈—“–\œËÎÓÊÂÌËˇ —¿œ–\MM\À‡·1\kronsht_sim1-solution_1.dat'
+OUT='./kronsht_sim1-solution_1'
+MEM=957047808
+MACH='Intel64 Family 6 Model 158 Stepping 10'
+OPER='Windows 8'
+OSV=' '
+MODEL='Intel(R) Core(TM) i7-9750H CPU @ 2.60GHz (LAPTOP-40LJOQCU)'
+CONFIG=8666
+NPROC=12
+symbol=DELDIR='c:/program files/siemens/nx 10.0/nxnastran/nxn10/nast/del' $(program default)
+symbol=DEMODIR='c:/program files/siemens/nx 10.0/nxnastran/nxn10/nast/demo' $(program default)
+symbol=SSSALTERDIR='c:/program files/siemens/nx 10.0/nxnastran/nxn10/nast/misc/sssalter' $(program default)
+symbol=TPLDIR='c:/program files/siemens/nx 10.0/nxnastran/nxn10/nast/tpl' $(program default)
+SDIR='c:/users/admin/appdata/local/temp/kronsht_sim1-solution_1.T1240_18'
+DBS='c:/users/admin/appdata/local/temp/kronsht_sim1-solution_1.T1240_18'
+SCR=yes
+SMEM=20.0X
+NEWDEL='c:/program files/siemens/nx 10.0/nxnastran/nxn10/em64tntl/SSS'
+DEL='NXNDEF'
+AUTH='28000@laptop-40ljoqcu'
+AUTHQUE=0
+MSGCAT='c:/program files/siemens/nx 10.0/nxnastran/nxn10/em64tntl/analysis.msg'
+MSGDEST='f06'
+PROG=bundle
+NEWS='c:/program files/siemens/nx 10.0/nxnastran/nxn10/nast/news.txt'
+-------------------------------------------------------------------
+NXN_ISHELLPATH=C:\Program Files\Siemens\NX 10.0\nxnastran\bin
+NXN_JIDPATH=
+PATH=c:/program files/siemens/nx 10.0/nxnastran/nxn10/em64tntl;c:/program files/siemens/nx 10.0/nxnastran/nxn10/em64tntl/impi/bin;c:/program files/siemens/nx 10.0/nxnastran/nxn10/em64tntl/monitor;C:\Program Files\Siemens\NX 10.0\ugii;C:\Program Files (x86)\Common Files\Oracle\Java\javapath;C:\Program Files\National Instruments\Shared\OpenVINO\;C:\ProgramData\Oracle\Java\javapath;C:\Python27\;C:\Python27\Scripts;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Windows\System32\OpenSSH\;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\WINDOWS\System32\OpenSSH\;C:\Program Files\dotnet\;C:\Program Files\Microsoft SQL Server\130\Tools\Binn\;C:\Program Files\Microsoft SQL Server\Client SDK\ODBC\170\Tools\Binn\;C:\Program Files\nodejs\;C:\ProgramData\chocolatey\bin;C:\Program Files\MATLAB\R2020a\bin;C:\Program Files\Microsoft SQL Server\120\Tools\Binn\;C:\Program Files\Git\cmd;C:\MinGW\bin;C:\Program Files\Java\jdk\bin;C:\Program Files\Java\jre1.8.0_211\bin;C:\PROGRA~2\Aldec\ACTIVE~1.2\BIN;C:\Program Files (x86)\NVIDIA Corporation\PhysX\Common;C:\Program Files (x86)\dotnet\;C:\Program Files (x86)\IVI Foundation\VISA\WinNT\Bin\;C:\Program Files\IVI Foundation\VISA\Win64\Bin\;C:\Program Files (x86)\IVI Foundation\VISA\WinNT\Bin;C:\Users\Admin\AppData\Local\Programs\Python\Python310\Scripts\;C:\Users\Admin\AppData\Local\Programs\Python\Python310\;C:\Program Files\MySQL\MySQL Shell 8.0\bin\;C:\Users\Admin\AppData\Local\Programs\Python\Python39\Scripts\;C:\Users\Admin\AppData\Local\Programs\Python\Python39\;C:\Users\Admin\AppData\Local\Microsoft\WindowsApps;C:\Users\Admin\AppData\Roaming\npm;C:\Users\Admin\AppData\Local\Programs\Microsoft VS Code\bin;;C:\Program Files\JetBrains\PyCharm 2021.2.3\bin;;C:\Program Files\JetBrains\IntelliJ IDEA 2022.2.3\bin;
+Command Line: kronsht_sim1-solution_1.dat prog=bundle old=no scratch=yes sys442=2
+Current Dir: C:\Users\Admin\Desktop\Ã√“”\7 —≈Ã≈—“–\œËÎÓÊÂÌËˇ —¿œ–\MM\À‡·1
+Executable:  c:/program files/siemens/nx 10.0/nxnastran/nxn10/em64tntl/analysis.exe
+NXN_MSG:     stderr
+FPE:         no
+-------------------------------------------------------------------
+Current resource limits:
+ Physical memory:                    16226 MB
+ Physical memory available:           7325 MB
+ Paging file size:                   30562 MB
+ Paging file size available:         20177 MB
+ Virtual memory:                 134217727 MB
+ Virtual memory available:       134213570 MB
+-------------------------------------------------------------------
+System configuration:
+ Hostname:         LAPTOP-40LJOQCU
+ Architecture:     em64tnt
+ Platform:         Intel64 Family 6 Model 158 Stepping 10 Windows 8  
+ Model:            Intel(R) Core(TM) i7-9750H CPU @ 2.60GHz
+ Clock freq.:      2592 MHz
+ Number of CPUs:   12
+ Executable:       standard
+ Raw model ID:     8666
+ Config number:    8666
+ Physical memory:  16226 MB
+ Virtual memory:   30562 MB
+ Numeric format:   64-bit little-endian IEEE.
+ Bytes per word:   8
+ Disk block size:  512 bytes (64 words)
+ Remote shell cmd: "c:/program files/siemens/nx 10.0/nxnastran/nxn10/em64tntl/edsrmtcmd.exe" (Windows, UNIX)
+-------------------------------------------------------------------
+NX Nastran started  Thu Jan 12 18:36:18 R2( 2023
+ 18:36:19  Beginning Analysis
+
+ 18:36:19  NX NASTRAN Authorization Information - System Attributes
+ 18:36:19  --------------------------------------------------------
+ 18:36:19  Model: Intel(R) Core(TM) i7-9750H CPU @
+ 18:36:19  Machine: Intel64 Family 6 Model 158 Stepp
+ 18:36:19  OS: Windows 8
+ 18:36:19  Version:
+ 18:36:19  License File(s): 28000@laptop-40ljoqcu
+
+
+ 18:36:19  NX NASTRAN Licensing Information
+ 18:36:19  -------------------------------
+ 18:36:19  Sold To ID:            1002010 - *SolidSQUAD*
+ 18:36:19  Webkey Access Code:    5555555555
+ 18:36:19  License File Issuer:   UGS
+
+
+ 18:36:19  NX NASTRAN Authorization Information - Checkout Successful
+ 18:36:19  ----------------------------------------------------------
+ 18:36:19  License for module NX Nastran Basic - NX Desktop (Bundle)  checked out successfully
+
+Starting viewer with UGII_TMG_DIR set to 'C:\Program Files\Siemens\NX 10.0\nxcae_extras\tmg/exe'
+Starting monitor viewer at C:\Program Files\Siemens\NX 10.0\nxcae_extras\tmg/exe/xcsmon_viewer.exe
+Loading Shared Library C:\Program Files\Siemens\NX 10.0\nxcae_extras\tmg\exe\mayamoncomm.dll
+ 18:36:22  Analysis started.
+ 18:36:22  Geometry access/verification to CAD part initiated (if needed).
+ 18:36:22  Geometry access/verification to CAD part successfully completed (if needed).
+ 18:36:23  Finite element model generation started.
+ 18:36:23  Finite element model generated 35502 degrees of freedom.
+ 18:36:23  Finite element model generation successfully completed.
+ 18:36:23  Application of Loads and Boundary Conditions to the finite element model started.
+ 18:36:23  Application of Loads and Boundary Conditions to the finite element model successfully completed.
+ 18:36:24  Solution of the system equations for linear statics started.
+ 18:36:24  Solution of the system equations for linear statics successfully completed.
+ 18:36:25  Linear static analysis completed.
+ 18:36:27  NSEXIT: EXIT(0)
+ 18:36:27  Analysis complete  0
+Real:        8.480 seconds ( 0:00:08.480)
+User:        6.781 seconds ( 0:00:06.781)
+Sys:         0.656 seconds ( 0:00:00.656)
+NX Nastran finished Thu Jan 12 18:36:27 R2( 2023
