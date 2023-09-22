@@ -1,0 +1,27 @@
+{
+  "process_id": 125,
+  "data": [
+    {
+      "id": 2,
+      "price_change": [
+        {
+          "price": 100,
+          "eff_from": "2018-01-12"
+        },
+      ]
+    },
+    {
+      "id": 4,
+      "price_change": [
+        {
+          "price": 10,
+          "eff_from": "2019-09-10"
+        },
+        {
+          "price": 15,
+          "eff_from": "2020-06-06"
+        }
+      ]
+    }
+  ]
+}

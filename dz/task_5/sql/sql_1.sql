@@ -1,0 +1,1 @@
+INSERT INTO prices (id_1, price, eff_from) VALUES (%s, %s, %s)

@@ -1,0 +1,1 @@
+INSERT INTO process_journal (process_id, file_name, start_ts, end_ts) VALUES (%s, %s, %s, %s)
