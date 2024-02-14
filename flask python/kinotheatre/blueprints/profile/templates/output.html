@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Результат поиска</title>
+
+
+</head>
+<body class="design2">
+<h1 align="center" class="distant"> Результат поисков:</h1>
+    <table border="1"  align="center">
+        <tr>
+            <th class="table">айди корабля</th>
+            <th class="table">дата прибытия</th>
+            <th class="table">дата отплытия</th>
+        </tr>
+        {% for item in str %}
+        <tr>
+            {% for key, values in item.items() %}
+                <td style="text-align: center">{{values}}</td>
+            {% endfor %}
+        </tr>
+        {% endfor %}
+    </table>
+<div align="center" style="margin-top: 150px"> <a href="/">Выход в главное меню</a> </div>
+</body>
+</html>
+

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Форма ввода</title>
+    <link href="{{url_for('static', filename='buttons.css')}}" rel="stylesheet" type="text/css">
+     <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Kablammo&family=Poiret+One&family=Rubik+Burned&display=swap" rel="stylesheet">
+</head>
+<body style="body">
+
+    <center>
+        <h2>ТИП ЗАПРОСА </h2>
+        <p>
+        <a class="button_slide slide_down" href="{{url_for('bp_query.query_sql1')}}">СОЗДАТЬ ОТЧЕТ ПО СЕАНСУ ПО ДАТЕ</a>
+        <a class="button_slide slide_down" href="{{url_for('bp_query.query_sql2')}}">СОЗДАТЬ ОТЧЕТ О ВЫРУЧКЕ ЗА МЕСЯЦ</a>
+        <br><br>
+        <a class="button_slide slide_down" href="{{url_for('bp_query.query_sql3')}}">ПОКАЗАТЬ СВЕДЕНЬЯ О ЗАЛЕ С МАКСИМАЛЬНЫМ КОЛИЧЕСТВОМ МЕСТ</a>
+        <a class="button_slide slide_down" href="{{url_for('bp_query.query_sql4')}}">ПОКАЗАТЬ ВСЕ СВЕДЕНЬЯ О ЗАЛЕ, ГДЕ НЕ ПРОХОДИЛИ СЕАНСЫ</a>
+            <br><br>
+        <a class="button_slide slide_down" href="{{url_for('bp_query.query_sql5')}}">НАЙТИ СЕАНСЫ, НА КОТОРЫЕ НЕ СОЗДАНЫ БИЛЕТЫ</a>
+        <a class="button_slide slide_down" href="{{url_for('bp_query.query_sql6')}}">ПОКАЗАТЬ СЕАНС, НА КОТОРЫЙ ПРОДАНО МАКСИМАЛЬНОЕ ЧИСЛО БИЛЕТОВ</a>
+            <br><br>
+        <a class="logout-button" href="{{url_for('bp_auth.auth_exit')}}">ВЫЙТИ</a>
+        </p>
+    </center>
+</body>
+</html>

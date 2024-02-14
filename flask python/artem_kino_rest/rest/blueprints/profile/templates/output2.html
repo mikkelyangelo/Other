@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Результат поиска</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+        }
+
+        h1 {
+            color: #333;
+            font-size: 28px;
+            margin-top: 50px;
+            text-transform: uppercase;
+        }
+
+        table {
+            border-collapse: collapse;
+            width: 60%;
+            margin: 50px auto;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .table th {
+            background-color: #55608f;
+            color: #ffffff;
+            text-align: center;
+            padding: 15px;
+            font-size: 18px;
+        }
+
+        td {
+            text-align: center;
+            padding: 10px;
+            font-size: 16px;
+            color: #333;
+            border-bottom: 1px solid #e1e1e1;
+        }
+
+        tr:hover {
+            background-color: #f5f5f5;
+        }
+
+        tr:nth-child(even) {
+            background-color: #eff1f3;
+        }
+
+        a {
+            font-size: 18px;
+            color: #55608f;
+            text-decoration: none;
+            border: 1px solid #55608f;
+            padding: 10px 20px;
+            transition: all 0.3s ease;
+        }
+
+        a:hover {
+            background-color: #55608f;
+            color: #ffffff;
+        }
+
+        .link-box {
+            margin-top: 20px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+<h1 align="center">Сведения о официантах:</h1>
+    <table>
+        <th class="table">паспортные данные</th>
+        <th class="table">дата принятия на работу</th>
+        <th class="table">дата рождения</th>
+        <th class="table">имя</th>
+        <th class="table">фамилия</th>
+        {% for item in str %}
+        <tr>
+            {% for key, values in item.items() %}
+                <td>{{values}}</td>
+            {% endfor %}
+        </tr>
+        {% endfor %}
+    </table>
+<div class="link-box">
+    <a href="/">Выход в главное меню</a>
+</div>
+</body>
+</html>

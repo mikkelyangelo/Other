@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/static/css/styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="icon" href="/static/images/icon.svg" type="image/x-icon">
+    <title>Выполнение запроса</title>
+</head>
+
+<body>
+    <main>
+        <div class="container">
+            <div class="container-centered">
+                <div class="mytable">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>
+                                    <div class="label_page">
+                                        Выполнение запроса
+                                    </div>
+                                </th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {% if session['role'] == 'recruiter' %}
+                            <tr>
+                                <td class="no-padding">
+                                    <form action="{{ url_for('queries_app.search_candidate_by_city') }}" method="GET">
+                                        <input type="submit" value="Показать кандидатов из заданного города">
+                                    </form>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="no-padding">
+                                    <form action="{{ url_for('queries_app.show_vacancy') }}" method="GET">
+                                        <input type="submit" value="Поиск открытых вакансий по названию">
+                                    </form>
+                                </td>
+                            </tr>
+                            {% endif %}
+                            {% if session['role'] == 'specialist' %}
+                            <tr>
+                                <td class="no-padding">
+                                    <form action="{{ url_for('queries_app.show_employees') }}" method="GET">
+                                        <input type="submit" value="Поиск сотрудников по имени">
+                                    </form>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="no-padding">
+                                    <form action="{{ url_for('queries_app.show_interviews') }}" method="GET">
+                                        <input type="submit" value="Показать проведенные интервью за месяц">
+                                    </form>
+                                </td>
+                            </tr>
+                            {% endif %}
+                            <tr>
+                                <td class="no-padding">
+                                    <form action="{{ url_for('index_handler') }}" method="GET">
+                                        <input type="submit" value="На главную">
+                                    </form>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            {% with messages = get_flashed_messages(with_categories=true) %}
+            {% if messages %}
+            {% for category, message in messages %}
+            <div class="message">
+                {% if category == 'okay' %}
+                <div class="okay">
+                    {{ message }}
+                </div>
+                {% endif %}
+                {% if category == 'error' %}
+                <div class="error">
+                    {{ message }}
+                </div>
+                {% endif %}
+            </div>
+            {% endfor %}
+            {% endif %}
+            {% endwith %}
+        </div>
+    </main>
+
+    <div id="loading">
+        <div class="spinner"></div>
+    </div>
+</body>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="/static/js/pageEventHandlers.js"></script>
+
+</html>

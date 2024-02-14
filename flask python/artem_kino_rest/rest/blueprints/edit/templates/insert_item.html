@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Добавление брони</title>
+    <style>
+        /* Обновленные стили */
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f7f7f7;
+            color: #333;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+        }
+
+        .container {
+            background: #fff;
+            padding: 30px 50px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            width: 100%;
+            max-width: 500px;
+            box-sizing: border-box;
+        }
+
+        .back-links {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 30px;
+        }
+
+        a {
+            text-decoration: none;
+            color: #3498db;
+            font-weight: bold;
+        }
+
+        h2 {
+            color: #555;
+            margin-bottom: 20px;
+            font-size: 24px;
+            text-align: center;
+        }
+
+        form > *:not(:last-child) {
+            margin-bottom: 15px;
+        }
+
+        .checkbox-label {
+            display: block;
+            position: relative;
+            padding-left: 35px;
+            margin-bottom: 20px;
+            cursor: pointer;
+            font-size: 14px;
+            user-select: none;
+        }
+
+        .checkbox-label input {
+            position: absolute;
+            opacity: 0;
+            cursor: pointer;
+            height: 0;
+            width: 0;
+        }
+
+        .checkmark {
+            position: absolute;
+            top: 0;
+            left: 0;
+            height: 20px;
+            width: 20px;
+            background-color: #eee;
+            border-radius: 5px;
+            border: 2px solid #dcdcdc;
+        }
+
+        .checkbox-label:hover input ~ .checkmark {
+            background-color: #ccc;
+        }
+
+        .checkbox-label input:checked ~ .checkmark {
+            background-color: #3498db;
+            border-color: #3498db;
+        }
+
+        .checkmark:after {
+            content: "";
+            position: absolute;
+            display: none;
+        }
+
+        .checkbox-label input:checked ~ .checkmark:after {
+            display: block;
+        }
+
+        .checkbox-label .checkmark:after {
+            left: 6px;
+            top: 2px;
+            width: 5px;
+            height: 10px;
+            border: solid white;
+            border-width: 0 3px 3px 0;
+            -webkit-transform: rotate(45deg);
+            -ms-transform: rotate(45deg);
+            transform: rotate(45deg);
+        }
+
+        input[type="number"],
+        input[type="time"],
+        input[type="text"] {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            box-sizing: border-box;
+            transition: border 0.3s, box-shadow 0.3s;
+        }
+
+        input[type="number"]:focus,
+        input[type="time"]:focus,
+        input[type="text"]:focus {
+            border-color: #3498db;
+            box-shadow: 0 0 3px #3498db;
+        }
+
+        input[type="submit"] {
+            width: 100%;
+            padding: 10px;
+            background-color: #3498db;
+            border: none;
+            color: white;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #2980b9;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="back-links">
+            <a href='/edit'>Назад</a>
+            <a href='/'>В главное меню</a>
+        </div>
+        <h2>Добавление брони</h2>
+        <form action="" method="post">
+            <label class="checkbox-label">
+                Вип
+                <input type="checkbox" name="vip" value="1">
+                <span class="checkmark"></span>
+            </label>
+            <label class="checkbox-label">
+                Курящий зал
+                <input type="checkbox" name="smoking" value="1">
+                <span class="checkmark"></span>
+            </label>
+            <input type="number" name="count_guest" placeholder="количество гостей" required>
+            <label for="time_res">Время бронирования</label>
+            <input type="time" id="time_res" name="time_res" required>
+            <input type="text" name="name" placeholder="ваше имя" required>
+            <input type="submit" name="action" value="Добавить">
+        </form>
+    </div>
+</body>
+</html>

@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Результат поиска</title>
+
+<style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #a69524;
+            margin: 0;
+            padding: 0;
+        }
+        .success {
+            color: green;
+        }
+        .error {
+            color: red;
+        }
+        .design {
+            text-align: center;
+            padding-top: 50px;
+        }
+        h1 {
+            font-size: 3em;
+            text-align: left;
+            margin-left: 1px;
+        }
+        a {
+            font-size: 2em;
+            text-decoration: none;
+            display: block;
+            margin-bottom: 10px;
+        }
+        a:hover {
+            color: #ff6600;
+        }
+    </style>
+
+</head>
+<body>
+<h1 align="center"> Результат:</h1>
+    <table border="5" align="center">
+        <tr>
+            <th class="table">айди издателя</th>
+            <th class="table">название издателя</th>
+            <th class="table">адрес</th>
+            <th class="table">фамилия контактного лица</th>
+            <th class="table">мобильный телефон</th>
+            <th class="table">год основания</th>
+            <th class="table">дата заключения контракта</th>
+        </tr>
+        {% for item in result %}
+        <tr>
+            {% for key, values in item.items() %}
+                <td style="text-align: center">{{values}}</td>
+            {% endfor %}
+        </tr>
+        {% endfor %}
+    </table>
+<div align="center" style="margin-top: 150px"> <a href="/">Выход в главное меню</a> </div>
+</body>
+</html>
+

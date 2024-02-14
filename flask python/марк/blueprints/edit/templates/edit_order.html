@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <h2 align="center">Имена</h2>
+    <div align="center">
+        <table border="0" width="25%" >
+            {% for head in heads %}
+            <th align="left"> {{ head }} </th>
+            {% endfor %}
+            <form action="" method="post">
+                <input type="text" name="Cli" value="{{ item['Cli'] }}">
+                <input type="date" name="DateTO" value="{{ item['DateTO'] }}">
+                <input type="text" name="NumAU" value="{{ item['NumAU'] }}">
+                <input type="text" name="CostTO" value="{{ item['CostTO'] }}">
+                <input type="submit" name="action" value="Сохранить">
+            </form>
+        </table>
+    </div>
+</body>
+</html>

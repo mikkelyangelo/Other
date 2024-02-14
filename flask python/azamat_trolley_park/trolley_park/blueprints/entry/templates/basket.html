@@ -1,0 +1,83 @@
+{% macro render_item(item, id, show_form = False, show_amount = False) %}
+<link href="../static/css/confirm.css" rel="stylesheet" type="text/css">
+    <link rel="canonical" href="https://getbootstrap.com/docs/5.3/examples/sign-in/">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+            crossorigin="anonymous"></script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            color: #333;
+            margin: 0;
+            padding: 20px;
+        }
+
+        a {
+            display: inline-block;
+            font-size: 20px;
+            color: #0056b3;
+            text-decoration: none;
+            margin-bottom: 10px;
+            transition: color 0.3s ease-in-out;
+        }
+
+        a:hover {
+            color: #ff5722;
+        }
+
+        .container {
+            width: 80%;
+            margin: 0 auto;
+        }
+
+        h1 {
+            color: #333;
+        }
+
+        .message {
+            border: 1px solid #ddd;
+            padding: 10px 20px;
+            border-radius: 4px;
+            background-color: #e7f3fe;
+            color: #31708f;
+            margin-bottom: 15px;
+        }
+
+        .message.success {
+            border-color: #c3e6cb;
+            background-color: #d4edda;
+            color: #155724;
+        }
+
+        .message.error {
+            border-color: #f5c6cb;
+            background-color: #f8d7da;
+            color: #721c24;
+        }
+        span {
+            text-align: center;
+            margin: 0 auto;
+        }
+    </style>
+<div style = "border-style: solid; border-radius: 5px; border-color: #fafafa; margin:5px;">
+    <p style="margin: 10px;text-align: center; font-family: Cambria; font-size: 14pt;">
+        <span>ФИО:</span>
+        <span style="color: #100f11; margin: 0 auto"> {{item['fio']}}</span><br>
+        <span>Дата рождения:</span>
+        <span style="color: #100f11;"> {{item['birthday']}}</span><br>
+        <span>Адрес:</span>
+        <span style="color: #100f11;"> {{item['address']}}</span><br>
+    </p>
+
+    {% if show_form %}
+    <form  method = "post" action="">
+        <input type="submit" class="btn" style="margin: 10px; text-align: center; background-color: #160f23; width: 200px; height: 40px; color: white; font-size:14pt; font-weigth: bold;" name="send" value = "Выбрать водителя">
+        <input type="hidden" value = "{{id}}" name="id" id="{{id}}">
+    </form>
+    {% endif %}
+
+</div>
+{% endmacro %}

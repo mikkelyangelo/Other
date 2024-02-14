@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Авторизация</title>
+    <link href = "{{url_for('static', filename = 'need_auth.css')}}" rel = "stylesheet" type = "text/css">
+    <link href="{{url_for('static', filename='O.css')}}" rel="stylesheet" type="text/css">
+</head>
+<body>
+<center>
+        <h2 class="title">Введите логин и пароль</h2>
+        <form action = "" method="post">
+            <label for="login" class="data"> Логин </label>
+            <input type="text" name="login" id="login">
+            <br><br>
+            <label for="password" class="data"> Пароль</label>
+            <input type="text" name="password" id="password">
+            <br><br>
+            <input type="submit" class="button" value="Войти">
+            <input type="reset" class="button" value="Сбросить">
+            <br><br>
+            <div class="text">Необходима авторизация!</div>
+            <a class="button" href="{{url_for('start_menu')}}">Вернуться на главную страницу</a>
+
+        </form>
+    </center>
+</body>
+</html>

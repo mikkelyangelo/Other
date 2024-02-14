@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Выберите запрос:</title>
+
+<style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+        }
+
+        h1 {
+            color: #333;
+            font-size: 28px;
+            margin-top: 50px;
+            text-transform: uppercase;
+        }
+
+        table {
+            border-collapse: collapse;
+            width: 60%;
+            margin: 50px auto;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .table th {
+            background-color: #0076fe;
+            color: #ffffff;
+            text-align: center;
+            padding: 15px;
+            font-size: 18px;
+        }
+
+        td {
+            text-align: center;
+            padding: 10px;
+            font-size: 16px;
+            color: #333;
+            border-bottom: 1px solid #e1e1e1;
+        }
+
+        tr:hover {
+            background-color: #f5f5f5;
+        }
+
+        tr:nth-child(even) {
+            background-color: #eff1f3;
+        }
+
+        a {
+            font-size: 18px;
+            color: #0076fe;
+            text-decoration: none;
+            border: 1px solid #0076fe;
+            padding: 10px 20px;
+            transition: all 0.3s ease;
+        }
+
+        a:hover {
+            background-color: #0076fe;
+            color: #ffffff;
+        }
+
+        .link-box {
+            margin-top: 20px;
+            text-align: center;
+        }
+    </style>
+
+</head>
+<body class="design">
+
+    <h1  class="distant"            align="left" style="position: fixed; left: 10px;"> Выберите SQL-запрос:</h1>
+    <div class="container-fluid"    align="left" style="position: fixed; top: 100px;">
+        <div class="card" >
+            <ul class="list-group list-group-flush">
+                <li class="list-group-item" style="margin-top: 50px"><a href="prov1">Показать максимальную стоимость заказа за год и месяц</a></li>
+                <li class="list-group-item" style="margin-top: 50px"><a href="prov2">Показать все сведения официантах, принятых на работу за год и месяц</a></li>
+                <li class="list-group-item" style="margin-top: 50px"><a href="prov3">Показать все сведения о заказах, принятых в промежутке</a></li>
+                <li class="list-group-item" style="margin-top: 50px"><a href="prov4">Найти сумму всех заказов, принятых каждым официантом за дату </a></li>
+            </ul>
+        </div>
+        <div style="margin-top: 230px"> <a href="/">Выход в главное меню</a> </div>
+    </div>
+
+</body>
+</html>
+

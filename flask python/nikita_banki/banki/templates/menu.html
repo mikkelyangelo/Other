@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Главное меню.</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            color: #333;
+            margin: 0;
+            padding: 20px;
+        }
+
+        a {
+            display: inline-block;
+            font-size: 20px;
+            color: #0056b3;
+            text-decoration: none;
+            margin-bottom: 10px;
+            transition: color 0.3s ease-in-out;
+        }
+
+        a:hover {
+            color: #ff5722;
+        }
+
+        .container {
+            width: 80%;
+            margin: 0 auto;
+        }
+
+        h1 {
+            color: #333;
+        }
+
+        .message {
+            border: 1px solid #ddd;
+            padding: 10px 20px;
+            border-radius: 4px;
+            background-color: #e7f3fe;
+            color: #31708f;
+            margin-bottom: 15px;
+        }
+
+        .message.success {
+            border-color: #c3e6cb;
+            background-color: #d4edda;
+            color: #155724;
+        }
+
+        .message.error {
+            border-color: #f5c6cb;
+            background-color: #f8d7da;
+            color: #721c24;
+        }
+        .img1{
+            width: 10vw;
+            height: 10vh;
+        }
+    </style>
+</head>
+<body class="design">
+    <div class="container">
+        <h1>Сайт троллейбусного парка</h1>
+        <div>
+            {% with messages = get_flashed_messages(with_categories=True) %}
+            {% for category, message in messages %}
+            <div class="message {{ category }}">{{ message }}</div>
+            {% endfor %}
+            {% endwith %}
+        </div>
+        <div align="left">
+            <a href="/profile/">Ресторанные проделки</a><br>
+            <a href="/reports/">Пидонрасы</a><br>
+            <a href="/exit">Пудж</a>
+            <br>
+            <a href="/entry" ><input type="image" src = "static\img\легенда.png" class="img1"></a>
+        </div>
+    </div>
+</body>
+</html>

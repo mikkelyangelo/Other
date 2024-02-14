@@ -1,0 +1,57 @@
+{
+  "manager": [
+    "",
+    "authorization.login_page",
+    "profile.index",
+    "profile.get_sql1"
+  ],
+  "Модератор": [
+    "",
+    "authorization.login_page",
+    "profile.index",
+    "profile.get_sql2"
+  ],
+   "Тестировщик": [
+    "",
+    "authorization.login_page",
+    "profile.index",
+    "profile.get_sql3",
+     "reports.view_1",
+     "reports.reports_choice"
+   ],
+  "Администратор": [
+    "",
+    "authorization.login_page",
+    "profile.index",
+    "profile.get_sql1",
+    "profile.get_sql2",
+    "profile.get_sql3",
+    "reports.reports_choice",
+     "reports.view_1",
+     "reports.create_1"
+  ],
+  "unauthorized": [
+    "",
+    "authorization.login_page"
+  ],
+  "Клиент1": [
+    "",
+    "authorization.login_page",
+    "entry.edit_index"
+  ],
+  "Клиент2": [
+    "",
+    "authorization.login_page",
+    "entry.edit_index"
+  ],
+  "Клиент3": [
+    "",
+    "authorization.login_page",
+    "entry.edit_index"
+  ],
+  "Клиент4": [
+    "",
+    "authorization.login_page",
+    "entry.edit_index"
+  ]
+}

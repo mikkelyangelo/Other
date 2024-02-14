@@ -1,0 +1,2 @@
+SELECT Internet_Service_Provider.Service.Name, COUNT(Service_connection_and_disconnection_history.IDClient_1) AS Number_of_Clients
+FROM Internet_Service_Provider.Service INNER JOIN Internet_Service_Provider.Service_connection_and_disconnection_history ON Internet_Service_Provider.Service.idService = Internet_Service_Provider.Service_connection_and_disconnection_history.idService GROUP BY Service.Name

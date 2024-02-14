@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Главное меню.</title>
+        <style>
+            body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+        }
+        .btn {
+            margin-top: 10px;
+            padding: 10px;
+            width: 200px;
+            font-size: 13pt;
+            font-weight: bold;
+        }
+        .topic_btn {
+            background-color: #4462db;
+            color: #100f11;
+        }
+        .topic_btn:hover {
+            background-color: #4462db;
+            color: #4462db;
+        }
+        h2 {
+            margin-top: 30px;
+            color: #4462db;
+        }
+    </style>
+        </style>
+
+
+    </head>
+    {% with messages = get_flashed_messages(with_categories=True) %}
+                {% for category, message in messages %}
+                        <div class="{{ category }}">{{ message }}</div>
+                {% endfor %}
+    {% endwith %}
+    <body class="design">
+            <h1 style="font-size:300%" align="left" x>Сайт кафедры  </h1>
+
+            <div align="left">
+                        <a href="/profile/"  style="font-size:200%"      >Информация на кафедре</a> <br>
+                        <a href="/reports/"  style="font-size:200%"      >Работа с отчётами</a> <br>
+                        <a href="/entry/"  style="font-size:200%"      >Назначение защиты работ</a> <br>
+                        {% if log_status %}
+                            <a href="/exit" style="font-size:200%"  >Выход</a>
+                        {% else %}
+                            <a href="/authorization/" style="font-size:200%"  >Авторизация</a>
+                        {% endif %}
+             </div>
+    </body>
+</html>

@@ -1,0 +1,8 @@
+{% macro render_item(in = False, out = False) %}
+ {% if in %}
+<a href="/authorization/" type="button" class="btn me-2" style="background-color: #7e44db; color: white;">Войти</a>
+ {% endif %}
+ {% if out %}
+<a href="/exit" role="button" class="btn me-2" style="background-color: #7e44db; color: white;">Выйти</a>
+ {% endif %}
+{% endmacro %}

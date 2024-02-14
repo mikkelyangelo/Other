@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Авторизация</title>
+    <link href = "{{url_for('static', filename='buttons.css')}}" rel = "stylesheet" type="text/css">
+</head>
+<body>
+<center>
+        <h2>ВЕДИТЕ ЛОГИН И ПАРОЛЬ</h2>
+        <form action = "" method="post">
+            <label for="login"> ЛОГИН </label>
+            <input type="text" name="login" id="login">
+            <br><br>
+            <label for="password"> ПАРОЛЬ</label>
+            <input type="password" name="password" id="password">
+            <br><br>
+            <input type="reset" class="button_slide slide_down" value="СБРОСИТЬ">
+            <input type="submit" class="button_slide slide_down" value="ВОЙТИ">
+            <br><br>
+            <a class="button_slide slide_down" href="{{url_for('main_menu')}}">ВЕРНУТЬСЯ НА ГЛАВНУЮ</a>
+        </form>
+    </center>
+</body>
+</html>

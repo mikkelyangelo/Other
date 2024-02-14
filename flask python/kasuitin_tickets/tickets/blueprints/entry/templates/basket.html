@@ -1,0 +1,19 @@
+{% macro render_item(item, id_ticket, show_form = False, show_amount = False) %}
+<div class="student-item" style="border: 2px solid #d7c7f0; border-radius: 5px; margin: 10px; padding: 10px; background-color: #f9f9f9;">
+    <p style="font-family: Arial, sans-serif; font-size: 16px; margin-bottom: 10px; display: inline-block; text-align: left;">
+        <span>Класс:</span>
+        <span style="color: #12b201; margin-left: 10px;">{{item['class']}}</span><br>
+        <span>Цена билета:</span>
+        <span style="color: #12b201; margin-left: 10px;">{{item['cost']}}</span><br>
+    </p>
+
+    {% if show_form %}
+    <form method="post" action="">
+        <input type="submit" class="btn btn-primary" style="width: 200px; font-size: 14px;" name="send" value="Выбрать билет">
+        <input type="hidden" value="{{id_ticket}}" name="id" id="{{id_ticket}}">
+        <input type="hidden" value="{{bonus_add}}" name="bonus" id="{{bonus_add}}">
+    </form>
+    {% endif %}
+
+</div>
+{% endmacro %}

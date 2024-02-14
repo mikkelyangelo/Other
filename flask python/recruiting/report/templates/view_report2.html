@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/static/css/styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
+    <title>Просмотр отчета</title>
+</head>
+
+<body>
+    <main>
+        <div class="container">
+            <div class="container-centered">
+                <div class="mytable">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>
+                                    <div class="label_page">
+                                        {{ name }} <br> (просмотр)
+                                    </div>
+                                </th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <form action="{{ url_for('reports_app.view_report') }}" method="POST">
+                                <tr>
+                                    <td class="no-padding">
+                                        <input type="month" name="date" placeholder="Дата" autocomplete="off" required>
+                                        <input type="hidden" name="rep_id" value="{{ rep_id }}">
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td style="padding: 0;">
+                                        <input type="submit" value="Просмотреть">
+                                    </td>
+                                </tr>
+                            </form>
+                            <td style="padding: 0;">
+                                <form action="{{ url_for('reports_app.reports_index') }}">
+                                    <input type="submit" value="Вернуться к выбору">
+                                </form>
+                            </td>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            {% with messages = get_flashed_messages(with_categories=true) %}
+            {% if messages %}
+            {% for category, message in messages %}
+            <div class="message">
+                {% if category == 'okay' %}
+                <div class="okay">
+                    {{ message }}
+                </div>
+                {% endif %}
+                {% if category == 'error' %}
+                <div class="error">
+                    {{ message }}
+                </div>
+                {% endif %}
+            </div>
+            {% endfor %}
+            {% endif %}
+            {% endwith %}
+        </div>
+        {% if result %}
+        <div class="sql-results">
+            <div class="label_page">
+                {% set months = ["январь", "февраль", "март", "апрель", "май", "июнь", "июль", "август", "сентябрь",
+                "октябрь", "ноябрь", "декабрь"] %}
+                {{ name }} за {{ months[result[0]['rep_month'] - 1] }} {{ result[0]['rep_year'] }}г.
+            </div>
+            {% if rep_id == '1' %}
+            <div class="mytable-for-results">
+                <table>
+                    <thead>
+                        <tr>
+                            <th style="min-width: 25vw; max-width: 25vw;">Рекрутер</th>
+                            <th style="min-width: 25vw; max-width: 25vw;">Дата трудоустройства</th>
+                            <th style="min-width: 25vw; max-width: 25vw;">Количество проведенных интервью</th>
+                        </tr>
+                    <tbody>
+                        {% for item in result %}
+                        <tr>
+                            <td style="min-width: 25vw; max-width: 25vw;">{{ item['employee_name'] }}</td>
+                            <td style="min-width: 25vw; max-width: 25vw;">{{ item['employee_date_of_enrollm'] }}</td>
+                            <td style="min-width: 25vw; max-width: 25vw;">{{ item['count'] }}</td>
+                        </tr>
+                        {% endfor %}
+                    </tbody>
+                    <tfoot>
+                        <tr>
+                            <td>
+                                В выбранную дату было проведено <strong>{{cost}}</strong> интервью
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="no-padding" style="background-color: var(--register-color);">
+                                <input type="submit" value="Вернуться к вводу"
+                                    onclick="document.querySelector('.container').scrollIntoView({ behavior: 'smooth' })">
+                            </td>
+                        </tr>
+                    </tfoot>
+                </table>
+            </div>
+            {% endif %}
+            {% if rep_id == '2' %}
+            <div class="mytable-for-results">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Название вакансии</th>
+                            <th>Дата открытия вакансии</th>
+                        </tr>
+                    <tbody>
+                        {% for item in result %}
+                        <tr>
+                            <td>{{ item['vac_name'] }}</td>
+                            <td>{{ item['vac_open_date'] }}</td>
+                        </tr>
+                        {% endfor %}
+                    </tbody>
+                    <tfoot>
+                        <tr>
+                            <td class="no-padding" style="background-color: var(--register-color);">
+                                <input type="submit" value="Вернуться к вводу"
+                                    onclick="document.querySelector('.container').scrollIntoView({ behavior: 'smooth' })">
+                            </td>
+                        </tr>
+                    </tfoot>
+                </table>
+            </div>
+            {% endif %}
+        </div>
+        {% endif %}
+    </main>
+
+    <div id="loading">
+        <div class="spinner"></div>
+    </div>
+</body>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="/static/js/pageEventHandlers.js"></script>
+
+</html>

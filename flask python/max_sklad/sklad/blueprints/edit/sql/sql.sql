@@ -1,0 +1,1 @@
+INSERT INTO supply values(NULL,'$user_date', '$user')

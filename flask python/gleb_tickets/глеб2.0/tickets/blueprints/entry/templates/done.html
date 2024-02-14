@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Результат поиска</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+        }
+        .btn {
+            margin-top: 10px;
+            padding: 10px;
+            width: 200px;
+            font-size: 13pt;
+            font-weight: bold;
+        }
+        .topic_btn {
+            background-color: #4462db;
+            color: #100f11;
+        }
+        .topic_btn:hover {
+            background-color: #4462db;
+            color: #4462db;
+        }
+        h2 {
+            margin-top: 30px;
+            color: #4462db;
+        }
+    </style>
+
+</head>
+<body class="design2">
+<h1 align="center" class="distant"> Вы успешно забронировали билеты</h1>
+    <table border="1"  align="center">
+        <th class="table">номер билета</th>
+        <th class="table">ряд</th>
+        <th class="table">место</th>
+        <th class="table">цена</th>
+        {% for item in str %}
+        <tr>
+            {% for key, values in item.items() %}
+                <td style="text-align: center">{{values}}</td>
+            {% endfor %}
+        </tr>
+        {% endfor %}
+    </table>
+<div align="center" style="margin-top: 150px"> <a href="/">Выход в главное меню</a> </div>
+</body>
+</html>
+

@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Билеты</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <style>
+        body {
+            background-color: #f4f4f4;  /* Neutral background to keep the focus on content */
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* A more modern font */
+            margin: 0;
+            padding: 20px;
+            color: #333;  /* Darker text for better readability */
+        }
+
+        h1 {
+            font-size: 2.5em;
+            color: #0a256e; /* Deep blue for a touch of professionalism */
+            margin-bottom: 0.5em; /* Reduced bottom margin */
+            text-align: center; /* Centered heading */
+        }
+
+        a {
+            display: flex;
+            align-items: center;
+            padding: 10px 15px;
+            background-color: #fff; /* White background for items */
+            border-radius: 5px; /* Rounded corners */
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1); /* Subtle shadow for depth */
+            text-decoration: none;
+            color: #007bff; /* Blue that stands out */
+            font-size: 1.2em;
+            transition: background-color 0.3s, transform 0.2s;
+        }
+
+        a:hover {
+            background-color: #ebf5ff; /* Lighter blue on hover */
+            transform: translateY(-2px); /* Lifting effect */
+            text-decoration: none; /* Ensure no underline appears */
+        }
+
+        .menu-item {
+            margin-top: 1em;
+            display: flex;
+            justify-content: flex-start;
+        }
+
+        .icon {
+            font-size: 1.5em;
+            min-width: 30px; /* Ensure consistent icon width */
+            margin-right: 10px;
+            color: #0b8dbc; /* Icon color to match link color */
+        }
+
+        .success, .error {
+            font-size: 1.5em;
+            padding: 10px;
+            border-radius: 4px;
+        }
+
+        .success {
+            background-color: #d4edda; /* Light green background for success */
+            color: #155724; /* Dark green text */
+            border: 1px solid #c3e6cb; /* Green border */
+        }
+
+        .error {
+            background-color: #f8d7da; /* Light red background for errors */
+            color: #721c24; /* Dark red text */
+            border: 1px solid #f5c6cb; /* Red border */
+        }
+
+        /* Ensures that the menu is centered and neatly organized */
+        .menu {
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 20px;
+            background: #f8f9fa; /* Light background for the menu */
+            border-radius: 10px; /* Rounded corners */
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1); /* subtle shadow */
+        }
+    </style>
+</head>
+<body>
+<div class="container text-center">
+    <div class="py-2">
+        <a role="button" class="btn btn-topic"
+           href="{{url_for('entry.save_order')}}">Оформить заказ</a>
+        <a role="button" class="btn btn-topic"
+           href="/">Главное меню</a>
+    </div>
+    {% import 'basket.html' as utils %}
+    <div class="row">
+        <div class="col-md-8">
+            {% if item %}
+                <h2>Билеты</h2>
+                {% for i in item %}
+                    {{utils.render_item(i, show_form = True, show_amount = False, id_ticket=i['id_ticket'])}}
+                {% endfor %}
+            {% else %}
+                <div class="alert alert-warning" role="alert">
+                    Увы ;( Билетов не осталось.
+                </div>
+            {% endif %}
+        </div>
+        <div class="col-md-4">
+            <h2>Корзина</h2>
+            {% if basket %}
+                {% for key in basket_keys %}
+                    {{utils.render_item(basket[key], show_form = False, show_amount = True,
+                    id_ticket=basket[key]['id_ticket'])}}
+                {% endfor %}
+                <a role="button" class="btn btn-topic my-2"
+                   href="{{url_for('entry.clear_basket')}}">Очистить корзину</a>
+            {% else %}
+                <div class="alert alert-info" role="alert">
+                    Вы пока ничего не выбрали.
+                </div>
+            {% endif %}
+        </div>
+    </div>
+</div>
+</body>
+</html>

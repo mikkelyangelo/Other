@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Утверждение водителей</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            color: #333;
+            margin: 0;
+            padding: 20px;
+        }
+
+        a {
+            display: inline-block;
+            font-size: 20px;
+            color: #0056b3;
+            text-decoration: none;
+            margin-bottom: 10px;
+            transition: color 0.3s ease-in-out;
+        }
+
+        a:hover {
+            color: #ff5722;
+        }
+
+        .container {
+            width: 80%;
+            margin: 0 auto;
+        }
+
+        h1 {
+            color: #333;
+        }
+        h2{
+            text-align: center;
+        }
+
+        .message {
+            border: 1px solid #ddd;
+            padding: 10px 20px;
+            border-radius: 4px;
+            background-color: #e7f3fe;
+            color: #31708f;
+            margin-bottom: 15px;
+        }
+
+        .message.success {
+            border-color: #c3e6cb;
+            background-color: #d4edda;
+            color: #155724;
+        }
+
+        .message.error {
+            border-color: #f5c6cb;
+            background-color: #f8d7da;
+            color: #721c24;
+        }
+    </style>
+</head>
+<body>
+<center>
+    <a role="button" class="btn topic_btn"
+       style="margin-top: 10px; padding: 10px; background-color:#160f23; width: 200px; font-family: Helvetica; font-size: 13pt; font-weight: bold; color:#ffffff;"
+       href="{{url_for('entry.save_order')}}">Утвердить водителей</a>
+    <a role="button" class="btn topic_btn"
+       style="margin-top: 10px;padding: 10px; background-color:#160f23; width: 200px; font-family: Helvetica; font-size: 13pt; font-weight: bold; color:#ffffff;"
+       href="/">Главное меню</a>
+</center>
+{% import 'basket.html' as utils %}
+<div class="container">
+    <div class="row">
+        <div class="col-md-8" style="margin-top: 30px;">
+            <h2>Водители</h2>
+            {% for i in item %}
+            {{utils.render_item(i, show_form = True, show_amount = False, id=i['id'])}}
+            {% endfor %}
+        </div>
+        <div class="col-md-4" style="margin-top: 30px;">
+            <h2>Текущий выбор</h2>
+            {% if basket %}
+            {% for key in basket_keys %}
+            {{utils.render_item(basket[key], show_form = False, show_amount = True,
+            id=basket[key]['id'])}}
+            {% endfor %}
+            <a role="button" class="btn topic_btn"
+               style="margin-top: 10px; padding: 10px; background-color:#100f11; width: 200px; font-family: Helvetica; font-size: 13pt; font-weight: bold; color:#ffffff;"
+               href="{{url_for('entry.clear_basket')}}">Очистить</a>
+            {% else %}
+            <div class="row">
+                <h2 class="" align="center" style="padding-top: 30px;">Вы пока ничего не выбрали</h2>
+            </div>
+            {% endif %}
+        </div>
+    </div>
+</div>
+</body>
+</html>
