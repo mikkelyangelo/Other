@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Выручка за период</title>
+    <link rel="stylesheet" href="/static/styles.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+    <style>
+        .main-enter-block{
+
+        }
+
+        .unfiled-button{
+            width: 100%;
+        }
+
+        .date-form{
+            margin-bottom:5px;
+        }
+    </style>
+</head>
+    <body class="design">
+        <header>
+                <div class="header-block">
+                    <a href="/">
+                        <div class="logo-block">
+                            <img class="logo-img" src="/static/img/logo.svg">
+                            <div class="logo-text">Кинотеатр Пиковый Туз</div>
+                        </div>
+                    </a>
+                </div>
+        </header>
+        <div class="main-content">
+            <div class="main-enter-block">
+                <div class="main-enter-block-title">
+                    Введите интересующие месяц и год
+                </div>
+                <div class="main-content-block">
+                    <form action="" method='POST' class="date-form">
+                        <input type="number"   class="input" placeholder="Введите месяц"  min="1" max="12"   name="month" required>
+                        <input type="number"   class="input" placeholder="Введите год"   min="1970" max="2024"  name="year" required>
+                        <input type="submit" class="filed-button" placeholder="Отправить">
+                    </form>
+                    <a class="unfiled-button" href="/profile">
+                        <div>Назад к запросам</div>
+                    </a>
+                </div>
+            </div>
+         </div>
+    </body>
+</html>

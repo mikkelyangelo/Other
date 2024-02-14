@@ -1,0 +1,44 @@
+{
+  "Администратор": [
+    "",
+    "authorization.login_page",
+    "reports.reports_choice",
+    "reports.view_1",
+    "reports.view_2",
+    "reports.view_3",
+    "reports.create_1",
+    "reports.create_2",
+    "reports.create_3",
+    "reports.tickets_create"
+  ],
+  "Директор": [
+    "",
+    "authorization.login_page",
+    "reports.reports_choice",
+    "reports.view_1",
+    "reports.view_2",
+    "reports.view_3"
+  ],
+   "Клиент": [
+    "",
+    "authorization.login_page",
+    "entry.edit_index"
+  ],
+  "Аналитик": [
+    "",
+    "authorization.login_page",
+    "profile.index",
+    "profile.get_sql1",
+    "profile.get_sql2",
+    "profile.get_sql3",
+    "profile.get_sql4",
+    "reports.reports_choice",
+    "reports.view_1",
+    "reports.view_2",
+    "reports.view_3"
+  ],
+  "unauthorized": [
+    "",
+    "authorization.login_page"
+  ]
+}

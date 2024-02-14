@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Бронь билетов</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <style>
+        .row {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 10px;
+        }
+        .seat {
+            width: 15px;
+            height: 15px;
+            margin: 2px;
+            border: 1px solid #000;
+            background-color: lightgreen; /* Set different colors for available and occupied seats */
+        }
+    </style>
+</head>
+<body>
+<center>
+    <a role="button" class="btn topic_btn"
+       style="margin-top: 10px; padding: 10px; background-color:#ffffff; width: 200px; font-family: Helvetica; font-size: 13pt; font-weight: bold; color:#090808;"
+       href="{{url_for('entry.save_order')}}">Оформить заказ</a>
+    <a role="button" class="btn topic_btn"
+       style="margin-top: 10px;padding: 10px; background-color:#ffffff; width: 200px; font-family: Helvetica; font-size: 13pt; font-weight: bold; color:#090808;"
+       href="/">Главное меню</a>
+</center>
+<div class="container">
+    <h2>Карта мест в кинотеатре</h2>
+    {% if quit %}
+    {% for row in range(max_row) %}
+    <div class="row">
+        <p>Ряд {{ row + 1 }}</p>
+        <div style="display: flex;">
+            {% for seat in range(max_seat) %}
+                {% if status[row][seat] == 0 %}
+                    <div style="width: 30px; height: 30px; margin: 5px; border: 1px solid #000; background-color: lightgreen;"></div>
+                {% else %}
+                    <div style="width: 30px; height: 30px; margin: 5px; border: 1px solid #000; background-color: #d03f0b;"></div>
+                {% endif %}
+            {% endfor %}
+        </div>
+    </div>
+    {% endfor %}
+    {% endif %}
+</div>
+{% import 'basket.html' as utils %}
+<div class="container">
+    <div class="row">
+        <div class="col-md-8" style="margin-top: 30px;">
+            {% if item %}
+                <h2>Доступные билеты</h2>
+                {% for i in item %}
+                {{utils.render_item(i, show_form = True, show_amount = False, ID_ticket=i['ID_ticket'])}}
+                {% endfor %}
+            {% else %}
+             <tr>
+                    <td colspan="{{ heads|length }}">Увы ;( билетов не осталось</td>
+                </tr>
+            {% endif %}
+        </div>
+        <div class="col-md-4" style="margin-top: 30px;">
+            <h2>Оформить заказ</h2>
+            {% if basket %}
+            {% for key in basket_keys %}
+            {{utils.render_item(basket[key], show_form = False, show_amount = True,
+            ID_ticket=basket[key]['ID_ticket'])}}
+            {% endfor %}
+            <a role="button" class="btn topic_btn"
+               style="margin-top: 10px; padding: 10px; background-color:#090808; width: 200px; font-family: Helvetica; font-size: 13pt; font-weight: bold; color:#ffffff;"
+               href="{{url_for('entry.clear_basket')}}">Очистить</a>
+            {% else %}
+            <div class="row">
+                <h2 class="" align="center" style="padding-top: 30px;">Вы пока ничего не выбрали</h2>
+            </div>
+            {% endif %}
+        </div>
+    </div>
+</div>
+</body>
+</html>

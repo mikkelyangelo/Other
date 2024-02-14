@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Авторизация</title>
+        <link rel="stylesheet" href="/static/styles.css">
+
+</head>
+
+<body class="design">
+        <header>
+                <div class="header-block">
+                    <a href="/">
+                        <div class="logo-block">
+                            <img class="logo-img" src="/static/img/logo.svg">
+                            <div class="logo-text">Кинотеатр Пиковый Туз</div>
+                        </div>
+                    </a>
+                </div>
+        </header>
+    <div class="main-content">
+        <div class="main-enter-block">
+            <div class="main-enter-block-title">
+                {{str}}
+            </div>
+            <div class="main-enter-block-subtitle-near">
+                Под пользователем - {{group_user}}
+            </div>
+            <a class="unfiled-button" href="/">
+                <div>Выйти в главное меню</div>
+            </a>
+        </div>
+    </div>
+</body>
+</html>

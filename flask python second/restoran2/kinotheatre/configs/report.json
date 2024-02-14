@@ -1,0 +1,24 @@
+[
+  {
+    "id": 1,
+    "name": "Отчёт о сеансах",
+    "sql_check": "check_report.sql",
+    "sql_create": "call_report.sql",
+    "sql_view": "view_sql.sql"
+  },
+  {
+    "id": 2,
+    "name": "Создание билетов",
+    "sql_check": "check_report2.sql",
+    "sql_create": "call_report2.sql",
+    "sql_view": "view_sql2.sql"
+  },
+  {
+    "id": 3,
+    "name": "Отчет за месяц",
+    "sql_check": "check_report3.sql",
+    "sql_create": "call_report3.sql",
+    "sql_view": "view_sql3.sql"
+  }
+
+]

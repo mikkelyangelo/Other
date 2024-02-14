@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Главное меню</title>
+        <link rel="stylesheet" href="/static/styles.css">
+
+    </head>
+    {% with messages = get_flashed_messages(with_categories=True) %}
+                {% for category, message in messages %}
+                        <div class="{{ category }}">{{ message }}</div>
+                {% endfor %}
+    {% endwith %}
+    <body class="design">
+        <header>
+                <div class="header-block">
+                    <a href="/">
+                        <div class="logo-block">
+                            <img class="logo-img" src="/static/img/logo.svg">
+                            <div class="logo-text">Кинотеатр Пиковый Туз</div>
+                        </div>
+                    </a>
+                </div>
+        </header>
+        <div class="main-content">
+<!--                <div class="banner-block">-->
+<!--                    <img class="banner-img" src="/static/img/movie1.jpg">-->
+<!--                    <img class="banner-img" src="/static/img/movie2.jpg">-->
+<!--                    <img class="banner-img" src="/static/img/movie3.jpg">-->
+<!--                    <img class="banner-img" src="/static/img/movie4.jpg">-->
+<!--                    <img class="banner-img" src="/static/img/movie5.webp">-->
+<!--                </div>-->
+
+                    <div class="main-enter-block">
+                        {% if log_status %}
+                        <div class="main-enter-block-title">
+                            Вы вошли как {{session['group_name']}}
+                        </div>
+                        <div class="main-content-block">
+                            {% if session['group_name'] == 'Аналитик' %}
+                                <a class="point-unfiled-button" href="/profile/">
+                                    <img src="/static/img/info.png">
+                                    <div>Информация о кинотеатре</div>
+                                </a>
+                            {% endif %}
+                            {% if session['group_name'] == 'Аналитик' or session['group_name'] == 'Директор' or session['group_name'] == 'Администратор' %}
+                                <a class="point-unfiled-button" href="/reports/">
+                                    <img src="/static/img/otchet.png">
+                                    <div>Работа с отчётами</div>
+                                </a>
+                            {% endif %}
+                            {% if session['group_name'] == 'Администратор' %}
+                                <a class="point-unfiled-button" href="/reports/tickets">
+                                    <img src="/static/img/otchet.png">
+                                    <div>Создание билетов</div>
+                                </a>
+                            {% endif %}
+                            {% if session['group_name'] == 'Клиент' %}
+                                <a class="point-unfiled-button" href="/entry/">
+                                    <img src="/static/img/tickets.png">
+                                    <div>Билеты</div>
+                                </a>
+                            {% endif %}
+                            <a class="filed-button" href="/authorization/exit">
+                                <div>Выход</div>
+                            </a>
+                        </div>
+
+                        {% else %}
+                        <div class="main-enter-block-title">
+                            Добро пожаловать<br> на сайт кинотеатра <span>ПИКОВЫЙ ТУЗ</span>
+                        </div>
+                        <div class="main-enter-block-subtitle">
+                            Авторизуйтесь, чтобы получить доступ ко всем возможностям сайта.
+                        </div>
+                        <div class="main-content-block">
+                            <a class="filed-button" href="/authorization/">
+                                <div>Авторизация</div>
+                            </a>
+                        </div>
+                        {% endif %}
+
+                    </div>
+         </div>
+    </body>
+</html>

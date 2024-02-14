@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Отчёт</title>
+    <link href="{{ url_for('static', filename='base.css') }}" rel="stylesheet" type="text/css">
+    <link href="{{ url_for('.static', filename='reports_result.css') }}" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="/static/styles.css">
+    <style>
+        .main-enter-block{
+
+            width: 1300px;
+        }
+
+        .main-content-block{
+            width: calc(80% - 20px);
+        }
+    </style>
+</head>
+<body class="design">
+    <header>
+        <div class="header-block">
+            <a href="/">
+                <div class="logo-block">
+                    <img class="logo-img" src="/static/img/logo.svg">
+                    <div class="logo-text">Кинотеатр Пиковый Туз</div>
+                </div>
+            </a>
+        </div>
+    </header>
+    <div class="main-content">
+        <div class="main-enter-block">
+            <div class="main-enter-block-title">
+                Отчет о сеансах
+            </div>
+            <div class="main-content-block">
+                <table border="1"  align="center" class="main-table-root">
+                    <tr>
+                        <th class="table-head-item-doc">Месяц</th>
+                        <th class="table-head-item-doc">Год</th>
+                        <th class="table-head-item-date">Выручка</th>
+                        <th class="table-head-item-doc">Продано билетов</th>
+                        <th class="table-head-item-doc">Не продано билетов</th>
+                    </tr>
+                    {% for item in result %}
+                    <tr>
+                        {% for key, values in item.items() %}
+                            <td style="text-align: center">
+                                {% if values == NULL %}
+
+                                {% else %}
+                                    {{values}}
+                                {% endif %}
+                            </td>
+                        {% endfor %}
+                    </tr>
+                    {% endfor %}
+                </table>
+                <a class="unfiled-button" href="/reports">
+                    <div>Назад к отчетам</div>
+                </a>
+            </div>
+        </div>
+     </div>
+</body>
+</html>

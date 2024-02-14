@@ -1,0 +1,1 @@
+CALL viruchka_report('$month', '$year');
