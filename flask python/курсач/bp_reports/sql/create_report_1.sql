@@ -1,1 +1,0 @@
-CALL proc_report_1('$month', '$year');

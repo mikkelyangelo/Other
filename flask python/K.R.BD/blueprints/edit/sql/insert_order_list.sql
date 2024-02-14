@@ -1,1 +1,0 @@
-insert service_connection_and_disconnection_history values(NULL,'$user_date', Null,'$id_cl','$id_serv',Null)

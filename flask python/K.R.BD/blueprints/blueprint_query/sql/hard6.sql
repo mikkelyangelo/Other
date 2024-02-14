@@ -1,3 +1,0 @@
-SELECT * FROM Internet_Service_Provider.Client
-JOIN Internet_Service_Provider.March_balances ON Internet_Service_Provider.Client.idClient = Internet_Service_Provider.March_balances.IDClient
-ORDER BY March_balances.total_balance_changes DESC

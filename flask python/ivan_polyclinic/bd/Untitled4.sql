@@ -1,1 +1,0 @@
-SELECT * FROM visit_table;

@@ -1,1 +1,0 @@
-select DishID, DishCost, DishName from menu where DishID = '$id'

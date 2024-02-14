@@ -1,9 +1,0 @@
-[
-  {
-    "id": 1,
-    "name": "Отчёт о регистрации кораблей",
-    "sql_check": "check_report.sql",
-    "sql_create": "call_report.sql",
-    "sql_view": "view_sql.sql"
-  }
-]

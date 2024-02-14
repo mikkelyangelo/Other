@@ -1,5 +1,0 @@
-SELECT Name, Cost_per_day,Date_of_connection,Date_of_disconnection, idService_connection_and_disconnection_history
-FROM service_connection_and_disconnection_history
-join service
-on service.idService = service_connection_and_disconnection_history.idService
-WHERE IDClient_1 = '$ids'

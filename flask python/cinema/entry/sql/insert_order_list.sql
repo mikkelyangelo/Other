@@ -1,1 +1,0 @@
-insert order_list values(NULL,'$order_id', '$id','$id_s')

@@ -1,1 +1,0 @@
-SELECT SUM(Balance_after_payment) AS summa FROM Internet_Service_Provider.Balance_history WHERE Balance_after_payment > 0

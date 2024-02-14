@@ -1,1 +1,0 @@
-insert temp_table values('$id_ticket','$dclass', '$cost','$bonus')
