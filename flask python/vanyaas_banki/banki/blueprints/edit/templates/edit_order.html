@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+            body {
+        font-family: Arial, sans-serif;
+        background-color: #f2f2f2;
+        margin: 0;
+        padding: 0;
+    }
+    .container {
+        width: 80%;
+        margin: 0 auto;
+        text-align: center;
+        padding: 20px;
+        background-color: #fff;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+    h1 {
+        font-size: 36px;
+        color: #333;
+    }
+    .design {
+        background-color: #f2f2f2;
+        height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    a {
+        text-decoration: none;
+        color: #333;
+        font-size: 20px;
+        margin: 10px;
+        transition: color 0.3s;
+    }
+    a:hover {
+        color: #ff5733;
+    }
+    .message {
+        padding: 10px;
+        margin: 10px 0;
+    }
+    .message.success {
+        background-color: #d4edda;
+        color: #155724;
+    }
+    .message.error {
+        background-color: #f8d7da;
+        color: #721c24;
+    }
+    </style>
+</head>
+<body>
+    <h2 align="center">Совершить перевод</h2>
+    <div align="center">
+        <table border="0" width="25%" >
+            {% for head in heads %}
+            <th align="left"> {{ head }} </th>
+            {% endfor %}
+            <form action="" method="post">
+                <label for="выбор-варианта">введите аккаунт на который хотите перевести сумму</label>
+                <select id="выбор-варианта" name="rek">
+                    <option value="ACC3680196111">ACC3680196111</option>
+                    <option value="ACC7358817909">ACC7358817909</option>
+                    <option value="ACC8703696855">ACC8703696855</option>
+                    <option value="ACC4058900379">ACC4058900379</option>
+                    <option value="ACC3104511620">ACC3104511620</option>
+                    <option value="ACC3344512321620">ACC3344512321620</option>
+                </select>
+<!--                <input type="text" class="input" name="rek" placeholder="введите аккаунт на который хотите перевести сумму">-->
+                <input type="number" class="input" name="sum" placeholder="сумма перевода">
+                <input type="hidden"  name="currency"  value="{{ item['currency'] }}" >
+                <input type="submit" name="action" value="Совершить перевод">
+            </form>
+        </table>
+    </div>
+</body>
+</html>

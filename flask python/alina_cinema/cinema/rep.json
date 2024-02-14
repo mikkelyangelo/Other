@@ -1,0 +1,12 @@
+[
+  {
+    "rep_name": "Report for summ",
+    "sql_name": "sum_cost.sql",
+    "proc_name": "kolt",
+    "table_name": "report"},
+  {
+    "rep_name": "Report for sold",
+    "sql_name": "sum_cost.sql",
+    "proc_name": "kolt",
+    "table_name": "report"}
+]

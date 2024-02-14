@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Результат поиска</title>
+
+
+
+</head>
+<body>
+<h1 align="center"> Результат:</h1>
+    <table border="5" align="center">
+        <th class="table">id заказа</th>
+        <th class="table">цена</th>
+        <th class="table">дата покупки</th>
+        <th class="table">айди терминала</th>
+        <th class="table">айди билета</th>
+        {% for item in result %}
+        <tr>
+            {% for key, values in item.items() %}
+                <td style="text-align: center">{{values}}</td>
+            {% endfor %}
+        </tr>
+        {% endfor %}
+    </table>
+<div align="center" style="margin-top: 150px"> <a href="/">Выход в главное меню</a> </div>
+</body>
+</html>
+

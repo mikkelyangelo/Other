@@ -1,0 +1,9 @@
+[
+  {
+    "id": 1,
+    "name": "Подключения",
+    "sql_check": "check_report.sql",
+    "sql_create": "call_report.sql",
+    "sql_view": "view_sql.sql"
+  }
+]

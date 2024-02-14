@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Главное меню.</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: red;
+            margin: 0;
+            padding: 0;
+        }
+
+        .design {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #fff;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        h1 {
+            font-size: 3em;
+            text-align: left;
+            margin-top: 40px;
+        }
+
+        div {
+            text-align: left;
+            margin-top: 20px;
+        }
+
+        a {
+            font-size: 2em;
+            display: block;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            text-decoration: none;
+            color: #fff;
+            margin-bottom: 20px;
+        }
+
+        a:first-child {
+            background-color: #4caf50;
+        }
+
+        a:nth-child(2) {
+            background-color: #008CBA;
+        }
+
+        a:nth-child(3) {
+            background-color: #f44336;
+        }
+
+        a:last-child {
+            background-color: #00bcd4;
+            margin-right: 10px;
+        }
+    </style>
+</head>
+<body class="design">
+    <h1>Банк</h1>
+    <div>
+        <a href="/profile/">SQL-запросы</a>
+        <a href="/reports/">Работа с отчётами</a>
+        <a href="/edit/">Поставки</a>
+        {% if log_status %}
+            <a href="/exit">Выход</a>
+        {% else %}
+            <a href="/authorization/">Авторизация</a>
+        {% endif %}
+    </div>
+</body>
+</html>

@@ -1,0 +1,1 @@
+SELECT Product_id FROM product WHERE Product_name = '$prod_name';

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Меню выбора</title>
+    <link href = "{{url_for('static', filename='buttons.css')}}" rel = "stylesheet" type="text/css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Kablammo&family=Poiret+One&family=Rubik+Burned&display=swap" rel="stylesheet">
+
+</head>
+<body>
+<center>
+    <div>
+        {% if not user_id %}
+        <h2>{{error}}</h2>
+        <a class="button_slide slide_down" href="{{url_for('auth')}}" style="font-size: 24px">Авторизоваться</a><br>
+        {% elif error %}
+        <h2>{{error}}</h2>
+        {% endif %}
+<!--        {% if group_name == 'admin' %}-->
+        <a class="button_slide slide_down" href="{{url_for('reports.reports_choice')}}">РАБОТА С ОТЧЁТАМИ</a><br>
+<!--        {% endif %}-->
+        {% if group_name == 'admin' %}
+        <a class="button_slide slide_down" href="{{url_for('entry.edit_index')}}">БИЗНЕС ПРОЦЕСС</a><br>
+<!--        {% endif %}-->
+        {% if group_name != 'user' %}
+        <a class="button_slide slide_down" href="{{url_for('bp_query.query_choice')}}">ПОИСК</a><br>
+        {% else %}
+        <a class="button_slide slide_down" href="{{url_for('bp_basket.choose')}}"> ПОКУПКИ </a><br>
+        {% endif %}
+        {% if user_id %}
+        <br>
+        <a class="logout-button" href="{{url_for('bp_auth.auth_exit')}}" style="font-size: 24px">ВЫЙТИ</a>
+        {% endif %}
+    </div>
+</center>
+</body>
+</html>

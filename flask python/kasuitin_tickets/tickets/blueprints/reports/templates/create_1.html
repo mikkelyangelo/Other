@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Создать отчёт</title>
+    <style>
+        body {
+            background-color: #EDF2F7;
+            font-family: Arial, sans-serif;
+            padding: 20px;
+        }
+
+        h1 {
+            color: #0056B3;
+            margin-bottom: 20px;
+        }
+
+        a {
+            text-decoration: none;
+            color: #0056B3;
+            font-size: 200%;
+            margin-top: 10px;
+            display: inline-block;
+            transition: color 0.3s;
+        }
+
+        a:hover {
+            color: #12b201;
+        }
+
+        .menu-item {
+            margin-top: 20px;
+        }
+
+        .icon {
+            width: 30px; /* Устанавливаем ширину иконок */
+            text-align: center;
+            margin-right: 10px;
+            vertical-align: middle;
+            color: #12b300;
+        }
+
+        .success, .error {
+            font-size: 200%;
+            color: #12b300;
+        }
+
+        .success {
+            color: green;
+        }
+
+        .error {
+            color: red;
+        }
+    </style>
+</head>
+<body>
+    {% with messages = get_flashed_messages(with_categories=True) %}
+            {% for category, message in messages %}
+                <div class="{{ category }}">{{ message }}</div>
+            {% endfor %}
+        {% endwith %}
+  <center>
+    <h2>Создать отчёт</h2>
+
+    <form action="" method=POST>
+        <div class="form-item">
+            <label for="year">Год</label>
+            <input type="number" name="year" id="year" required>
+        </div>
+        <div class="form-item">
+            <label for="month">Месяц</label>
+            <input type="number" name="month" min="1" max="12" id="month" required>
+        </div>
+        <button class="button-search" type="submit">Создать отчёт</button>
+    </form>
+    <div class="buttons-menu">
+        <a href="{{ url_for('reports.reports_choice') }}"><button class="button-menu"> Назад </button></a>
+        <a href="/"><button class="button-menu"> На главную </button></a>
+    </div>
+  </center>
+</body>
+</html>

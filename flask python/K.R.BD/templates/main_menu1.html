@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>MAIN</title>
+    <link href="{{url_for('static', filename='main_menu.css')}}" rel="stylesheet" type="text/css">
+    <link href="{{url_for('static', filename='O.css')}}" rel="stylesheet" type="text/css">
+</head>
+<body>
+    <div class="center">
+        <h1 class="title">С чем бы Вы хотели поработать?</h1>
+        <a href="{{url_for('bp_query.query_quest1')}}" class="main-link">Работа с запросами</a>
+        <a href="/reports/"  class="main-link"      >Работа с отчётами</a> <br>
+        <a href="/edit/"  class="main-link"    >Работа с интернет-провайдерами</a> <br>
+        <a href="{{url_for('bp_auth.auth_exit')}}" class="main-link">Выход</a>
+    </div>
+</body>
+</html>

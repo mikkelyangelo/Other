@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Бронирование</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f9f9f9;
+            color: #333;
+            margin: 0;
+            padding: 0;
+            line-height: 1.5;
+        }
+
+        h2 {
+            margin: 20px 0;
+            text-align: center;
+        }
+
+        table {
+            width: 50%;
+            margin: 20px auto;
+            border-collapse: collapse;
+        }
+
+        th, td {
+            padding: 8px;
+            border: 1px solid #ddd;
+            text-align: left;
+        }
+
+        th {
+            background-color: #f2f2f2;
+        }
+
+        tr:hover {background-color: #f5f5f5;}
+
+        input[type='submit'] {
+            background-color: #0077ff;
+            color: white;
+            border: none;
+            padding: 5px 10px;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        input[type='submit']:hover {
+            background-color: #0056b3;
+        }
+
+        a {
+            display: inline-block;
+            margin-top: 10px;
+            padding: 10px;
+            background-color: #0077ff;
+            color: white;
+            border-radius: 4px;
+            text-decoration: none;
+            transition: background-color 0.3s ease;
+        }
+
+        a:hover {
+            background-color: #0056b3;
+        }
+        .red{
+            background: #8d4242;
+        }
+        .green{
+            background: #5ebb4e;
+        }
+    </style>
+    
+</head>
+<body>
+    <h2>Бронирование</h2>
+    <div>
+        <table>
+            {% if items %}
+                <tr>
+                    {% for head in heads %}
+                    <th>{{ head }}</th>
+                    {% endfor %}
+                </tr>
+                {% for item in items %}
+                    <tr>
+                        {% if log %}
+                        {% if item['status_reserv'] != 0 %}
+                            <td class="red">{{ item['vip_status'] }}</td>
+                            <td class="red">{{ item['count_seats'] }}</td>
+                            <td class="red">{{ item['smoke'] }}</td>
+                            <td class="red">{{ item['name'] }}</td>
+                            <td class="red">{{ item['time_reserve'] }}</td>
+                            <td class="red">{{ item['who'] }}</td>
+                        {% else %}
+                            <td class="green">{{ item['vip_status'] }}</td>
+                            <td class="green">{{ item['count_seats'] }}</td>
+                            <td class="green">{{ item['smoke'] }}</td>
+                            <td class="green">{{ item['name'] }}</td>
+                            <td class="green">{{ item['time_reserve'] }}</td>
+                            <td class="green">{{ item['who'] }}</td>
+                        {% endif %}
+                        <td>
+                            <form action="" method="post">
+                                <input type="hidden" name="id" value="{{ item['idreserve'] }}">
+                                <input type="hidden" name="count_seats" value="{{ item['count_seats'] }}">
+                                <input type="submit" name="action" value="Отменить бронирование">
+                                {% if item['status_reserv'] == 0 %}
+                                <input type="submit" name="action" value="Назначить столик">
+                                {% endif %}
+                            </form>
+                        </td>
+                        {% endif %}
+                    </tr>
+                {% endfor %}
+            {% else %}
+                <tr>
+                    <td colspan="{{ heads|length }}">Бронирований нет</td>
+                </tr>
+            {% endif %}
+        </table>
+        <a href='/edit/add'>Добавить</a>
+    </div>
+    <div>
+        <a href='/'>В главное меню</a>
+    </div>
+</body>
+</html>

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <style>
+        .design {
+            background-color: lightblue;
+            padding: 20px;
+            font-family: Arial, sans-serif;
+        }
+
+        h1 {
+            color: navy;
+        }
+
+        a {
+            text-decoration: none;
+            color: darkblue;
+        }
+
+        a:hover {
+            color: blue;
+        }
+
+        div {
+            margin-top: 20px;
+        }
+
+        .success {
+            color: green;
+        }
+
+        .error {
+            color: red;
+        }
+    </style>
+        <title>Главное меню.</title>
+
+    </head>
+    {% with messages = get_flashed_messages(with_categories=True) %}
+                {% for category, message in messages %}
+                        <div class="{{ category }}">{{ message }}</div>
+                {% endfor %}
+    {% endwith %}
+    <body class="design">
+            <h1 style="font-size:300%" align="left" x>Аэропорт </h1>
+
+            <div align="left">
+                        <a href="/profile/"  style="font-size:200%"      >Информация </a> <br>
+                        <a href="/reports/"  style="font-size:200%"      >Работа с отчётами</a> <br>
+                        {% if log_status %}
+                            <a href="/exit" style="font-size:200%"  >Выход</a>
+                        {% else %}
+                            <a href="/authorization/" style="font-size:200%"  >Авторизация</a>
+                        {% endif %}
+             </div>
+    </body>
+</html>

@@ -1,0 +1,32 @@
+{
+  "manager": [
+    "",
+    "authorization.login_page",
+    "profile.index",
+    "profile.get_sql1"
+  ],
+  "Модератор": [
+    "",
+    "authorization.login_page",
+    "profile.index",
+    "profile.get_sql2"
+  ],
+   "Клиент": [
+    "",
+    "authorization.login_page",
+    "profile.index",
+    "profile.get_sql3"
+  ],
+  "Администратор": [
+    "",
+    "authorization.login_page",
+    "profile.index",
+    "profile.get_sql1",
+    "profile.get_sql2",
+    "profile.get_sql3"
+  ],
+  "unauthorized": [
+    "",
+    "authorization.login_page"
+  ]
+}

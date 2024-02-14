@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Создать отчёт</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #a69524;
+            margin: 0;
+            padding: 0;
+        }
+        .success {
+            color: green;
+        }
+        .error {
+            color: red;
+        }
+        .design {
+            text-align: center;
+            padding-top: 50px;
+        }
+        h1 {
+            font-size: 3em;
+            text-align: left;
+            margin-left: 1px;
+        }
+        a {
+            font-size: 2em;
+            text-decoration: none;
+            display: block;
+            margin-bottom: 10px;
+        }
+        a:hover {
+            color: #ff6600;
+        }
+    </style>
+</head>
+<body>
+{% with messages = get_flashed_messages(with_categories=True) %}
+            {% for category, message in messages %}
+                <div class="{{ category }}">{{ message }}</div>
+            {% endfor %}
+    {% endwith %}
+  <center>
+    <h2>Посмотреть отчёт "{{ title }}"</h2>
+    <form action="" method=POST>
+        <div class="form-item">
+            <label for="month">Месяц</label>
+            <input type="number" name="month" min="1" max="12" id="month" required>
+        </div>
+        <div class="form-item">
+            <label for="year">Год</label>
+            <input type="number" name="year" id="year" required>
+        </div>
+        <button class="button-search" type="submit">Посмотреть отчёт</button>
+    </form>
+    <div class="buttons-menu">
+        <a href="{{ url_for('reports.reports_choice') }}"><button class="button-menu"> Назад </button></a>
+        <a href="/"><button class="button-menu"> На главную </button></a>
+    </div>
+  </center>
+</body>
+</html>

@@ -1,0 +1,14 @@
+[
+    {
+        "rep_name": "Отчет по проведенным интервью",
+        "rep_id": "1",
+        "procedure": "fill_reports",
+        "sql_statement": "show_reports.sql"
+    },
+    {
+        "rep_name": "Отчет об открытых вакансиях",
+        "rep_id": "2",
+        "procedure": "fill_reports2",
+        "sql_statement": "show_reports2.sql"
+    }
+]

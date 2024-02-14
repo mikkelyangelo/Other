@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Главное меню.</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #a69524;
+            margin: 0;
+            padding: 0;
+        }
+        .success {
+            color: green;
+        }
+        .error {
+            color: red;
+        }
+        .design {
+            text-align: center;
+            padding-top: 50px;
+        }
+        h1 {
+            font-size: 3em;
+            text-align: left;
+            margin-left: 1px;
+        }
+        a {
+            font-size: 2em;
+            text-decoration: none;
+            display: block;
+            margin-bottom: 10px;
+        }
+        a:hover {
+            color: #ff6600;
+        }
+    </style>
+</head>
+<body class="design">
+    <h1>Библиотека</h1>
+    <div align="left">
+        <a href="/profile/">SQL-запросы</a>
+        <a href="/reports/">Работа с отчётами</a>
+        <a href="/entry/">Заказать книгу из библиотеки</a>
+        {% if log_status %}
+            <a href="/exit">Выход</a>
+        {% else %}
+            <a href="/authorization/">Авторизация</a>
+        {% endif %}
+    </div>
+</body>
+</html>

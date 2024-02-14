@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Бизнес-процесс</title>
+    <style>
+        body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+}
+
+form {
+    max-width: 600px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+label {
+    display: block;
+    margin-bottom: 8px;
+    color: #333;
+}
+
+input[type="number"],
+select {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+button {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+#addButton {
+    background-color: #4caf50;
+    color: #fff;
+    margin-bottom: 20px;
+}
+
+#submitButton {
+    background-color: #008CBA;
+    color: #fff;
+    margin-right: 10px;
+}
+
+#backButton {
+    background-color: #f44336;
+    color: #fff;
+}
+    </style>
+    <script>
+        function addFields() {
+            var container = document.getElementById("container");
+            var newDiv = document.createElement("div");
+            newDiv.innerHTML = `
+                <label for="quantity">Количество товара:</label>
+                <input type="number" name="quantity[]" required oninput="checkFields()">
+                <label for="productName">Наименование товара:</label>
+                <select name="productName[]" required onchange="checkFields()">
+                    <option value="">Выберите товар</option>
+                    <option value="PC">PC</option>
+                    <option value="Spoon">Spoon</option>
+                    <option value="Milk">Milk</option>
+                </select><br>
+            `;
+            container.appendChild(newDiv);
+            checkFields(); // Проверяем поля после добавления новых полей
+        }
+
+        function checkFields() {
+            var inputs = document.querySelectorAll('input, select');
+            var allFilled = true;
+            inputs.forEach(function(input) {
+                if (input.hasAttribute('required') && input.value === "") {
+                    allFilled = false;
+                }
+            });
+            document.getElementById("addButton").disabled = !allFilled;
+        }
+    </script>
+</head>
+<body>
+    <form action="" method="post">
+        <div id="container">
+            <label for="quantity">Количество товара:</label>
+            <input type="number" name="quantity[]" required oninput="checkFields()">
+            <label for="productName">Наименование товара:</label>
+            <select name="productName[]" required onchange="checkFields()">
+                <option value="">Выберите товар</option>
+                <option value="PC">PC</option>
+                <option value="Spoon">Spoon</option>
+                <option value="Milk">Milk</option>
+            </select><br>
+        </div>
+        <button type="button" onclick="addFields()" id="addButton" disabled>Добавить</button>
+        <button type="submit" id="submitButton">Отправить данные</button>
+    </form>
+</body>
+</html>
