@@ -1,0 +1,1 @@
+SELECT * FROM flights WHERE flight_number LIKE '$title%';

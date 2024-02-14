@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Выберите запрос:</title>
+    <style>
+    body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            color: #333;
+            margin: 0;
+            padding: 20px;
+        }
+
+        a {
+            display: inline-block;
+            font-size: 20px;
+            color: #0056b3;
+            text-decoration: none;
+            margin-bottom: 10px;
+            transition: color 0.3s ease-in-out;
+        }
+
+        a:hover {
+            color: #ff5722;
+        }
+
+        .container {
+            width: 80%;
+            margin: 0 auto;
+        }
+
+        h1 {
+            color: #333;
+        }
+
+        .message {
+            border: 1px solid #ddd;
+            padding: 10px 20px;
+            border-radius: 4px;
+            background-color: #e7f3fe;
+            color: #31708f;
+            margin-bottom: 15px;
+        }
+
+        .message.success {
+            border-color: #c3e6cb;
+            background-color: #d4edda;
+            color: #155724;
+        }
+
+        .message.error {
+            border-color: #f5c6cb;
+            background-color: #f8d7da;
+            color: #721c24;
+        }
+    </style>
+
+
+
+</head>
+<body class="design">
+
+    <h1  class="distant"            align="left" style="position: fixed; left: 10px;"> Выберите SQL-запрос:</h1>
+    <div class="container-fluid"    align="left" style="position: fixed; top: 100px;">
+        <div class="card" >
+            <ul class="list-group list-group-flush">
+                <li class="list-group-item" style="margin-top: 50px"><a href="prov1">Принятые на работу водители  </a></li>
+                <li class="list-group-item" style="margin-top: 50px"><a href="prov2">Принятые водители за последнее время   </a></li>
+                <li class="list-group-item" style="margin-top: 50px"><a href="prov3">Номера автобусов </a></li>
+            </ul>
+        </div>
+        <div style="margin-top: 430px"> <a href="/">Выход в главное меню</a> </div>
+    </div>
+
+</body>
+</html>
+

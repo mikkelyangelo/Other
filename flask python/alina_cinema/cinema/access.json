@@ -1,0 +1,13 @@
+{
+  "admin": [
+    "bp_query",
+    "reports",
+    "bp_basket"
+  ],
+  "user": [
+    "bp_basket"
+  ],
+  "manager": [
+    "bp_query"
+  ]
+}

@@ -1,0 +1,20 @@
+{
+  "patient": [
+    "",
+    "bp_auth"
+  ],
+  "admin": [
+    "",
+    "bp_auth",
+    "bp_queries",
+    "bp_reports.choice",
+    "bp_reports.view"
+  ],
+  "doctor": [
+    "",
+    "bp_auth",
+    "bp_queries",
+    "bp_reports.choice",
+    "bp_reports.create"
+  ]
+}

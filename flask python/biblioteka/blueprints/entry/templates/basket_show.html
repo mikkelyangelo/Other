@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Запись на приём</title>
+</head>
+<body>
+<center>
+    <a role="button" class="btn topic_btn" href="{{url_for('entry.save_order')}}">Заказать книгу</a>
+    <a role="button" class="btn topic_btn" href="/">Главное меню</a>
+</center>
+{% import 'basket.html' as utils %}
+<div class="container">
+    <div class="row">
+        <div class="col-md-8" style="margin-top: 30px;">
+            <h2>Книги</h2>
+            {% for i in item %}
+                {{utils.render_item(i, show_form = True, show_amount = False, id_book=i['id_book'])}}
+            {% endfor %}
+        </div>
+        <div class="col-md-4" style="margin-top: 30px;">
+            <h2>Корзина</h2>
+            {% if basket %}
+                {% for key in basket_keys %}
+                    {{utils.render_item(basket[key], show_form = False, show_amount = True, id_book=basket[key]['id_book'])}}
+                {% endfor %}
+                <a role="button" class="btn topic_btn" href="{{url_for('entry.clear_basket')}}">Очистить</a>
+            {% else %}
+                <div class="row">
+                    <h2 class="" align="center" style="padding-top: 30px;">Вы пока ничего не выбрали</h2>
+                </div>
+            {% endif %}
+        </div>
+    </div>
+</div>
+</body>
+</html>

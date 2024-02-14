@@ -1,0 +1,3 @@
+SELECT *
+FROM KOLT
+WHERE DATA = '$year' AND count = (SELECT MAX(count) FROM KOLT);

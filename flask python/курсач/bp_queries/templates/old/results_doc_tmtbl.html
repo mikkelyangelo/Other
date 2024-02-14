@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link href="{{ url_for('static', filename='base.css') }}" rel="stylesheet" type="text/css">
+    <link href="{{ url_for('.static', filename='results_doc_tmtbl.css') }}" rel="stylesheet" type="text/css">
+    <meta charset="UTF-8">
+    <title>Результаты поиска</title>
+</head>
+<body>
+    <center>
+    <h2> {{ res_title }}</h2>
+    <p>
+        {% if result %}
+            <table>
+            <tr>
+                <td class="avatar-row"><img class='avatar' src="{{ url_for('.static', filename='/avatar.png') }}" class="prod-img"></td>
+                <td>
+                    <table>
+                          {% for row in result %}
+                          <tr><td class="time">{{ row['time'] }}</td></tr>
+                          {% endfor %}
+                    </table>
+                </td>
+            </tr>
+            </table>
+        {% else %}
+            Нет информации.
+        {% endif %}
+    </p>
+
+    <div class="buttons-menu">
+
+      <a href="{{ url_for('bp_queries.doc_tmtbl') }}"><button class="button-menu"> Назад </button></a>
+      <a href="{{ url_for('home_page') }}"><button class="button-menu"> На главную </button></a>
+    </div>
+</center>
+</body>
+</html>

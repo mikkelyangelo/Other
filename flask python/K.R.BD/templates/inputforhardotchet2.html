@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Ввод параметров поиска</title>
+    <link href="{{url_for('static', filename='input_param.css')}}" rel="stylesheet" type="text/css">
+    <link href="{{url_for('static', filename='O.css')}}" rel="stylesheet" type="text/css">
+</head>
+<body>
+
+<center>
+    <h1 class="title">Введите параметры поиска</h1>
+    <form class="form" action="" method=POST>
+        <label class="Cost_per_day" for="Cost_per_day">Введите диапазон</label>
+        <label class="start" for="start">Начало</label>
+        <input type="text" name="start" id="st"><br>
+        <label class="finish" for="finish">Конец</label>
+        <input type="text" name="finish" id="fn"><br><br>
+        <input class="button" type="submit" value="Отправить">
+    </form>
+    <form class="form_nazad" action = '/query/quest'>
+         <button class="button1" id="main_page">Назад</button>
+     </form>
+</center>
+
+</body>
+</html>

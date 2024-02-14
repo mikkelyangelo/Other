@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Номера автобусов.</title>
+
+    <style>
+    body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            color: #333;
+            margin: 0;
+            padding: 20px;
+        }
+
+        a {
+            display: inline-block;
+            font-size: 20px;
+            color: #0056b3;
+            text-decoration: none;
+            margin-bottom: 10px;
+            transition: color 0.3s ease-in-out;
+        }
+
+        a:hover {
+            color: #ff5722;
+        }
+
+        .container {
+            width: 80%;
+            margin: 0 auto;
+        }
+
+        h1 {
+            color: #333;
+        }
+
+        .message {
+            border: 1px solid #ddd;
+            padding: 10px 20px;
+            border-radius: 4px;
+            background-color: #e7f3fe;
+            color: #31708f;
+            margin-bottom: 15px;
+        }
+
+        .message.success {
+            border-color: #c3e6cb;
+            background-color: #d4edda;
+            color: #155724;
+        }
+
+        .message.error {
+            border-color: #f5c6cb;
+            background-color: #f8d7da;
+            color: #721c24;
+        }
+    </style>
+
+</head>
+<body class="design2">
+    <h2 align="center" class="distant"> Выберите серийный номер для получения информации:</h2>
+
+    <form   action="" method='POST' align="center" style="margin-top: 260px">
+        <input type="text"   class="input" placeholder="Введите год"      name="year">
+        <input type="text"   class="input" placeholder="Введите месяц"      name="month">
+        <input type="submit" value="Отправить">
+    </form>
+
+    <div align="center" style="margin-top: 550px"> <a href="/">Выход в главное меню</a> </div>
+</body>
+</html>

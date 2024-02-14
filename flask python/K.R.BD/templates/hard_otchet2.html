@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Internet Service Provider.</title>
+    <link href="{{url_for('static', filename='dynamic.css')}}" rel="stylesheet" type="text/css">
+    <link href="{{url_for('static', filename='O.css')}}" rel="stylesheet" type="text/css">
+</head>
+<body>
+
+ <center class="center">
+   <h2 class="title">{{title}}</h2>
+     <table class="border" border="4">
+      <tr class="tr">
+        <td class="text">id клиента</td>
+        <td class="text">Информация о клиенте</td>
+        <td class="text">Общая сумма пополнений баланса</td>
+      </tr>
+         {% for client in data %}
+         <tr class="tr">
+           <td class="text">{{client['idClient']}}</td>
+           <td class="text">{{client['client_info']}}</td>
+           <td class="text">{{client['total_replenishments_january']}}</td>
+         </tr>
+         {% endfor %}
+     </table>
+
+     <form action = '/query/quest'>
+         <button class="button" id="main_page">Назад</button>
+     </form>
+     <form action = '/'>
+         <button class="button" id="main_page">Вернуться в главное меню</button>
+     </form>
+
+ </center>
+</body>
+</html>

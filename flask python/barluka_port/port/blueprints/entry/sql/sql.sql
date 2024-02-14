@@ -1,0 +1,1 @@
+INSERT INTO shipsregjournalrecord values(NULL, '$date_of_arrive',NULL,'$doc_name','$shifr','$crew_id')

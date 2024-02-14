@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Создать отчёт</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f9f9f9;
+            color: #333;
+            margin: 0;
+            padding: 0;
+            line-height: 1.5;
+            text-align: center;
+        }
+
+        h2 {
+            margin: 20px 0;
+        }
+
+        .report-item {
+            background-color: white;
+            margin-bottom: 15px;
+            padding: 15px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .buttons-reports button,
+        .buttons-menu button {
+            background-color: #0077ff;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            margin: 5px;
+            border-radius: 5px;
+            cursor: pointer;
+            text-decoration: none;
+            transition: background-color 0.3s ease;
+        }
+
+        .buttons-reports button:hover,
+        .buttons-menu button:hover {
+            background-color: #0056b3;
+        }
+
+        .buttons-reports,
+        .buttons-menu {
+            margin-top: 10px;
+        }
+
+        hr {
+            border: none;
+            height: 1px;
+            background-color: #eee;
+            margin: 10px 0;
+        }
+
+        /* Messages styling */
+        .info {
+            font-weight: bold;
+            color: #31708f;
+            background-color: #d9edf7;
+            padding: 10px;
+            margin: 10px 20px;
+            border-radius: 4px;
+        }
+
+        .error {
+            font-weight: bold;
+            color: #a94442;
+            background-color: #f2dede;
+            padding: 10px;
+            margin: 10px 20px;
+            border-radius: 4px;
+        }
+
+        .success {
+            font-weight: bold;
+            color: #3c763d;
+            background-color: #dff0d8;
+            padding: 10px;
+            margin: 10px 20px;
+            border-radius: 4px;
+        }
+
+        a {
+            text-decoration: none;
+        }
+    </style>
+</head>
+<body>
+{% with messages = get_flashed_messages(with_categories=True) %}
+            {% for category, message in messages %}
+                <div class="{{ category }}">{{ message }}</div>
+            {% endfor %}
+    {% endwith %}
+  <center>
+    <h2>Посмотреть отчёт "{{ title }}"</h2>
+    <form action="" method=POST>
+        <div class="form-item">
+            <label for="month">Месяц</label>
+            <input type="number" name="month" min="1" max="12" id="month" required>
+        </div>
+        <div class="form-item">
+            <label for="year">Год</label>
+            <input type="number" name="year" id="year" required>
+        </div>
+        <button class="button-search" type="submit">Посмотреть отчёт</button>
+    </form>
+    <div class="buttons-menu">
+        <a href="{{ url_for('reports.reports_choice') }}"><button class="button-menu"> Назад </button></a>
+        <a href="/"><button class="button-menu"> На главную </button></a>
+    </div>
+  </center>
+</body>
+</html>

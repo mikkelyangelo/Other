@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Выберите запрос:</title>
+
+<link rel="stylesheet" href="..\static\base.css">
+<style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #a69524;
+            margin: 0;
+            padding: 0;
+        }
+        .success {
+            color: green;
+        }
+        .error {
+            color: red;
+        }
+        .design {
+            text-align: center;
+            padding-top: 50px;
+        }
+        h1 {
+            font-size: 3em;
+            text-align: left;
+            margin-left: 1px;
+        }
+        a {
+            font-size: 2em;
+            text-decoration: none;
+            display: block;
+            margin-bottom: 10px;
+        }
+        a:hover {
+            color: #ff6600;
+        }
+    </style>
+</head>
+<body class="design">
+
+    <h1  class="distant"            align="left" style="position: fixed; left: 10px;"> Выберите SQL-запрос:</h1>
+    <div class="container-fluid"    align="left" style="position: fixed; top: 100px;">
+        <div class="card" >
+            <ul class="list-group list-group-flush">
+                <li class="list-group-item" style="margin-top: 50px"><a href="prov1">Сведения об издательствах</a></li>
+                <li class="list-group-item" style="margin-top: 50px"><a href="prov2">Сведения об издательствах за последние дни</a></li>
+                <li class="list-group-item" style="margin-top: 50px"><a href="prov3">Количество издательств по городам</a></li>
+            </ul>
+        </div>
+        <div style="margin-top: 430px"> <a href="/">Выход в главное меню</a> </div>
+    </div>
+
+</body>
+</html>
+

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link href="{{url_for('static', filename='buttons.css')}}" rel="stylesheet" type="text/css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Kablammo&family=Poiret+One&family=Rubik+Burned&display=swap" rel="stylesheet">
+</head>
+<body>
+<center>
+    <h2>{{prod_title}}</h2>
+    <p>
+        <table border="1">
+          <tr class="tab_title">
+              <td>СЕССИЯ</td>
+              <td>ДАТА</td>
+              <td>ВРЕМЯ</td>
+              <td>КОЭФФИЦИЕНТ</td>
+              <td>ФИЛЬМ</td>
+              <td>ХОЛЛ</td>
+          </tr>
+          {% for product in products %}
+            <tr>
+                <td>{{product['S_ID']}}</td>
+                <td>{{product['DATA']}}</td>
+                <td>{{product['TIME']}}</td>
+                <td>{{product['COEF']}}</td>
+                <td>{{product['FILM']}}</td>
+                <td>{{product['HALL']}}</td>
+            </tr>
+          {% endfor %}
+        </table>
+    </p>
+     <br><br>
+    <a class="button_slide slide_down" href="{{url_for('bp_query.query_choice')}}">ВЕРНУТЬСЯ</a>
+    <br><br>
+    <a class="logout-button" href="{{url_for('bp_auth.auth_exit')}}">ВЫЙТИ</a>
+
+</center>
+</body>
+</html>

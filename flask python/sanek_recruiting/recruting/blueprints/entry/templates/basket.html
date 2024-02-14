@@ -1,0 +1,31 @@
+{% macro render_item(item, job_id, show_form = False, show_amount = False) %}
+<link href="../static/css/confirm.css" rel="stylesheet" type="text/css">
+    <link rel="canonical" href="https://getbootstrap.com/docs/5.3/examples/sign-in/">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+            crossorigin="anonymous"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+<div style = "border-style: solid; border-radius: 5px; border-color: #d7c7f0; margin:5px;">
+    <p style="margin: 10px; font-family: Cambria; font-size: 14pt;">
+        <span>Название вакансии:</span>
+        <span style="color: #7e44db;"> {{item['job_name']}}</span><br>
+        <span>Минимальная зарплата:</span>
+        <span style="color: #4462db;"> {{item['min_salary']}}</span><br>
+        <span>Максимальная зарплата:</span>
+        <span style="color: #db4444;"> {{item['max_salary']}}</span><br>
+    </p>
+
+    {% if show_form %}
+    <form method = "post" action="">
+        <input type="submit" class="btn" style="margin: 10px; text-align: center; background-color: #160f23; width: 200px; height: 40px; color: white; font-size:14pt; font-weigth: bold;" name="send" value = "Добавить">
+        <input type="hidden" value = "{{job_id}}" name="job_id" id="{{job_id}}">
+    </form>
+    {% endif %}
+
+</div>
+{% endmacro %}

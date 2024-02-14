@@ -1,0 +1,46 @@
+{% extends "base_for_search.html" %}
+{% block title %}Поиск{% endblock %}
+{% block name_of_search %}Показать проведенные интервью за месяц{% endblock %}
+
+{% block form %}
+<form action="{{ url_for('queries_app.show_interviews') }}" method="POST">
+    <tr>
+        <td class="no-padding">
+            <input type="month" name="date" placeholder="Дата" autocomplete="off" required minlength="3">
+        </td>
+    </tr>
+    <tr>
+        <td style="padding: 0;">
+            <input type="submit" value="Найти">
+        </td>
+    </tr>
+</form>
+{% endblock %}
+
+{% block table_header %}
+<tr>
+    <th>Дата интервью</th>
+    <th>Результат интервью</th>
+    <th>Интервьюер</th>
+    <th>Вакансия</th>
+    <th>Кандидат</th>
+</tr>
+{% endblock %}
+
+{% block table_body %}
+{% for item in result %}
+<tr>
+    <td>{{ item['interview_date'] }}</td>
+    <td>
+        {% if item['interview_result'] == 0 %}
+        Кандидат не одобрен
+        {% elif item['interview_result'] == 1 %}
+        Успешно
+        {% endif %}
+    </td>
+    <td>{{ item['employee_name'] }}</td>
+    <td>{{ item['vacancy_name'] }}</td>
+    <td>{{ item['candidate_name'] }}</td>
+</tr>
+{% endfor %}
+{% endblock %}

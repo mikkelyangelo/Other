@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>SuperMarket</title>
+    <link href="{{url_for('static', filename='dynamic.css')}}" rel="stylesheet" type="text/css">
+    <link href="{{url_for('static', filename='O.css')}}" rel="stylesheet" type="text/css">
+</head>
+<body>
+
+ <center class="center">
+   <h2 class="title">{{title}}</h2>
+     <table class="border" border="4">
+      <tr class="tr">
+          <td class="text">Максимальная стоимость</br></td>
+      </tr>
+         {% for client in data %}
+         <tr class="tr">
+             <td class="text">{{client['Cost_per_day']}}</td>
+         </tr>
+         {% endfor %}
+     </table>
+
+     <form action = '/query/quest6'>
+         <button class="button" id="main_page">Назад</button>
+     </form>
+     <form action = '/'>
+         <button class="button" id="main_page">Вернуться в главное меню</button>
+     </form>
+
+ </center>
+</body>
+</html>

@@ -1,0 +1,4 @@
+SELECT HALL_ID, HALL_NAME, "TIME", SUM(PRICE)
+FROM hall JOIN session ON hall.HALL_ID = session.HALL JOIN ticket ON session.S_ID = ticket.SESSION_ID
+WHERE DATA = "$data" AND MARK = 'SOLD'
+GROUP BY HALL_ID, HALL_NAME, "TIME";

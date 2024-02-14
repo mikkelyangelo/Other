@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>QUEST</title>
+    <link href="{{url_for('static', filename='quest1.css')}}" rel="stylesheet" type="text/css">
+    <link href="{{url_for('static', filename='O.css')}}" rel="stylesheet" type="text/css">
+</head>
+<body>
+    <div class="center">
+
+        <h1 class="title">Выберете вид запроса</h1>
+        <p class="hard"> Простые запросы: </p>
+        <a href="{{url_for('bp_query.query_quest2')}}" class="main-link">Сведения о клиентах, <br>родившихся в марте 2000 года</br></a>
+        <a href="{{url_for('bp_query.query_quest3')}}" class="main-link">Сведения о клиентах, <br>заключивших договора за последние 60 дней</br></a>
+        <a href="{{url_for('bp_query.query_quest4')}}" class="main-link">Сумма положительного баланса всех клиентов</a>
+        <a href="{{url_for('bp_query.query_quest5')}}" class="main-link">Спрос на услуги</a>
+        <a href="{{url_for('bp_query.query_quest6')}}" class="main-link">Определение макс. стоимости услуги <br>по уникальному коду</br></a>
+        <a href="{{url_for('bp_query.query_quest7')}}" class="main-link">Изменения баланса клиентов <br>за март 2020 года</br></a>
+        <p class="hard"> Сложные запросы: </p>
+        <a href="{{url_for('bp_query.query_quest8')}}" class="main-link">Отчёт об услугах за 2020 год</a>
+        <a href="{{url_for('bp_query.query_quest9')}}" class="main-link">Отчёт об изменениях баланса клиентов, <br>номера которых находятся в диапозоне<br>между указанными числами</br></a>
+        <a href="{{url_for('bp_query.query_quest10')}}" class="main-link">Самый молодой клиент</a>
+        <a href="{{url_for('bp_query.query_quest11')}}" class="main-link">Клиенты, не менявшие баланс</a>
+        <a href="{{url_for('bp_query.query_quest12')}}" class="main-link">Клиенты, не менявшие баланс в марте 2020 года</a>
+        <a href="{{url_for('bp_query.query_quest13')}}" class="main-link">Клиенты с самым активным балансом <br>за март 2020 года</a>
+
+        <form action = '/main'>
+         <button class="button" id="main_page">Назад</button>
+    </form>
+    </div>
+</body>
+</html>
