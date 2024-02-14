@@ -1,6 +1,6 @@
-Lib
-Scripts
-_pycache_
-.idea
-Scripts
-venv
+Lib/
+Scripts/
+_pycache_/
+.idea/
+Scripts/
+venv/
