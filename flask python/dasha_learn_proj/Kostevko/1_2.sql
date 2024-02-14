@@ -1,3 +1,0 @@
-SELECT *
-FROM project
-WHERE defense_date BETWEEN DATE(NOW() - INTERVAL 3 DAY) AND NOW();

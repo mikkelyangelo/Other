@@ -1,1 +1,0 @@
-insert temp_table values('$id','$student_card_number', '$last_name','$group_name','$theme')

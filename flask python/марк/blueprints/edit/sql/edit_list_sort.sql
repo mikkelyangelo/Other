@@ -1,3 +1,0 @@
-SELECT *
-FROM `zak`
-ORDER BY Cli;

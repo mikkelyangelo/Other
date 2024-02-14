@@ -1,1 +1,0 @@
-SELECT * FROM Internet_Service_Provider.Client WHERE Date_of_birth BETWEEN '2000-03-01' AND '2000-03-31'

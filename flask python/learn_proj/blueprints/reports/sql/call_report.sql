@@ -1,1 +1,0 @@
-CALL otchet('$year','$month');

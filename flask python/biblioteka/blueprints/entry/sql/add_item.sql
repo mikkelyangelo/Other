@@ -1,1 +1,0 @@
-select * from book where id_book = '$id_book'
